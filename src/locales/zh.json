@@ -12,6 +12,8 @@
   },
   "nav": {
     "aria": "主导航",
+    "collapseSidebar": "收起侧边栏",
+    "expandSidebar": "展开侧边栏",
     "resume": "简历",
     "jd": "职位描述",
     "analysis": "分析"

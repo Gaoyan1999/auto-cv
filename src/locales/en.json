@@ -12,6 +12,8 @@
   },
   "nav": {
     "aria": "Primary",
+    "collapseSidebar": "Collapse sidebar",
+    "expandSidebar": "Expand sidebar",
     "resume": "Resume",
     "jd": "Job description",
     "analysis": "Analysis"
