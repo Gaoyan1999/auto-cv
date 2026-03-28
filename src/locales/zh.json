@@ -1,29 +1,74 @@
 {
-  "hero": {
-    "title": "开始使用",
-    "editPrefix": "编辑",
-    "editFile": "src/App.tsx",
-    "editMid": "并保存以测试",
-    "editHmr": "热更新（HMR）"
+  "app": {
+    "title": "求职申请助手",
+    "dataLocal": "数据保存在本机浏览器，可随时导出备份。",
+    "export": "导出"
   },
-  "counter": "计数：{{count}}",
-  "docs": {
-    "title": "文档",
-    "subtitle": "解答你的疑问",
-    "exploreVite": "探索 Vite",
-    "learnMore": "了解更多"
+  "theme": {
+    "aria": "颜色主题",
+    "light": "日间（浅色）",
+    "dark": "夜间（深色）",
+    "system": "跟随系统"
   },
-  "social": {
-    "title": "联系我们",
-    "subtitle": "加入 Vite 社区",
-    "github": "GitHub",
-    "discord": "Discord",
-    "twitter": "X.com",
-    "bluesky": "Bluesky"
+  "nav": {
+    "aria": "主导航",
+    "resume": "简历",
+    "jd": "职位描述",
+    "analysis": "分析"
   },
-  "a11y": {
-    "reactLogo": "React 标志",
-    "viteLogo": "Vite 标志"
+  "resume": {
+    "step": "第 1 步 / 共 3 步 · 简历",
+    "heading": "简历",
+    "subtitle": "在此编辑并查看内联 AI 改写建议。需你确认后才会写入正文。",
+    "editor": "编辑",
+    "preview": "预览",
+    "suggestionBadge": "{{count}} 条 AI 建议",
+    "acceptAll": "全部接受",
+    "rejectAll": "全部拒绝",
+    "inlineTitle": "待处理建议",
+    "suggestionsRegion": "AI 改写建议",
+    "accept": "接受",
+    "reject": "拒绝"
+  },
+  "jd": {
+    "step": "第 2 步 / 共 3 步 · 职位",
+    "heading": "职位描述",
+    "subtitle": "粘贴完整职位文本。未经你同意不会上传。",
+    "label": "职位正文",
+    "placeholder": "在此粘贴完整职位信息（标题、职责、要求等）…",
+    "hint": {
+      "empty": "请粘贴完整职位描述，以便做有意义的匹配分析。",
+      "tooShort": "内容偏短，若方便请尽量粘贴更完整的职位信息。",
+      "lowSignal": "不太像常见职位描述，请确认是否粘贴正确内容。",
+      "ok": "长度与结构看起来合理。"
+    },
+    "footerHint": "粘贴完成后运行分析，将与你当前的简历进行对比。",
+    "pasteClipboard": "从剪贴板粘贴",
+    "continueAnalysis": "前往分析",
+    "orSidebar": "也可在侧边栏打开「分析」标签。"
+  },
+  "analysis": {
+    "step": "第 3 步 / 共 3 步 · 分析",
+    "heading": "分析",
+    "subtitle": "匹配度、差距与可追溯对应关系。并非录用概率预测。",
+    "loadingTitle": "正在分析匹配度、差距与 JD 对应…",
+    "loadingBody": "正在将你的简历与该职位对比，通常只需数秒。",
+    "loadingHint": "可保持此标签页打开，完成后结果会显示在此处。",
+    "errorTitle": "分析未完成",
+    "errorBody": "请检查网络连接后重试。",
+    "retry": "重试",
+    "empty": "尚无分析结果。请先粘贴职位描述并运行分析。",
+    "run": "运行分析",
+    "fitTitle": "匹配摘要",
+    "gapsTitle": "可加强之处",
+    "traceTitle": "对应关系",
+    "traceJdLabel": "JD：",
+    "traceEmpty": "暂无可提取的 JD 行用于对应说明。",
+    "ctaKicker": "准备优化简历？",
+    "ctaBody": "打开「简历」标签，逐条查看并接受或拒绝 AI 建议。只有你接受后才会写入正文。",
+    "ctaResume": "在简历中应用建议",
+    "ctaHint": "与直接切换到「简历」标签相同——建议以行内形式展示。",
+    "privacy": "隐私：简历与职位文本默认保存在本机浏览器（IndexedDB）。导出会在你的设备上生成 JSON 文件。本 MVP 在浏览器内完成分析，无需登录；若分享备份文件请注意其中内容。"
   },
   "lang": {
     "en": "English",

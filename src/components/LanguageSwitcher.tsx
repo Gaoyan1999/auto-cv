@@ -6,11 +6,7 @@ export function LanguageSwitcher() {
   const { i18n, t } = useTranslation()
 
   return (
-    <div
-      className="lang-switcher"
-      role="group"
-      aria-label={t('common.language')}
-    >
+    <div className="app-lang" role="group" aria-label={t('common.language')}>
       {locales.map((lng) => {
         const active = i18n.resolvedLanguage?.startsWith(lng) ?? false
         return (
