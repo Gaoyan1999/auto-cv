@@ -11,15 +11,6 @@ This repo holds the product spec, UI design notes, and a high-fidelity Pencil pr
 | [docs/job-resume-agent-mvp-spec.md](docs/job-resume-agent-mvp-spec.md) | MVP spec: scope, principles, capabilities, and explicit non-goals |
 | [docs/ui-agent.md](docs/ui-agent.md) | Desktop web UI direction and screen list (for design and implementation) |
 
-## Repository layout
-
-```
-auto-cv/
-├── README.md
-├── auto-cv.pen    # Pencil design file (open in Pencil to edit)
-└── docs/          # Spec and UI notes
-```
-
 ## Initialize the GitHub remote
 
 This machine may not have the [GitHub CLI](https://cli.github.com/) (`gh`). Use either path below.
