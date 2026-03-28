@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react'
+import { Tab, TabGroup, TabList } from '@headlessui/react'
 import { ClipboardList, FileText, PanelLeft, PanelRight, ScanSearch } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import type { AppTab } from '../types/app'
@@ -25,6 +26,8 @@ export function SidebarNav() {
   const { tab, setTab } = useAppState()
   const [collapsed, setCollapsed] = useState(readCollapsed)
 
+  const selectedIndex = Math.max(0, items.findIndex((i) => i.id === tab))
+
   const toggleCollapsed = useCallback(() => {
     setCollapsed((c) => {
       const next = !c
@@ -39,6 +42,15 @@ export function SidebarNav() {
 
   const toggleBtnClass =
     'flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-[var(--app-muted)] transition-colors hover:bg-black/[0.06] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--app-accent)] dark:hover:bg-white/[0.08]'
+
+  const tabClass = (selected: boolean) =>
+    [
+      'flex w-full items-center gap-2.5 rounded-[10px] py-2.5 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--app-accent)]',
+      collapsed ? 'md:justify-center md:px-2 md:text-center' : 'px-3 text-left',
+      selected
+        ? 'bg-[var(--app-accent-subtle)] font-semibold text-[var(--app-text)] [&_svg]:text-[var(--app-accent)]'
+        : 'bg-[var(--app-canvas)] font-normal text-[var(--app-muted)] hover:bg-black/[0.03]',
+    ].join(' ')
 
   return (
     <nav
@@ -82,27 +94,24 @@ export function SidebarNav() {
           </div>
         )}
       </div>
-      {items.map(({ id, icon: Icon, labelKey }) => {
-        const active = tab === id
-        return (
-          <button
-            key={id}
-            type="button"
-            onClick={() => setTab(id)}
-            title={collapsed ? t(labelKey) : undefined}
-            className={[
-              'flex items-center gap-2.5 rounded-[10px] py-2.5 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--app-accent)]',
-              collapsed ? 'md:justify-center md:px-2 md:text-center' : 'px-3 text-left',
-              active
-                ? 'bg-[var(--app-accent-subtle)] font-semibold text-[var(--app-text)] [&_svg]:text-[var(--app-accent)]'
-                : 'bg-[var(--app-canvas)] font-normal text-[var(--app-muted)] hover:bg-black/[0.03]',
-            ].join(' ')}
-          >
-            <Icon className="h-[18px] w-[18px] shrink-0" aria-hidden />
-            <span className={collapsed ? 'md:sr-only' : undefined}>{t(labelKey)}</span>
-          </button>
-        )
-      })}
+      <TabGroup
+        vertical
+        selectedIndex={selectedIndex}
+        onChange={(index) => setTab(items[index].id)}
+      >
+        <TabList className="flex flex-col gap-1">
+          {items.map(({ id, icon: Icon, labelKey }) => (
+            <Tab
+              key={id}
+              className={({ selected }) => tabClass(selected)}
+              title={collapsed ? t(labelKey) : undefined}
+            >
+              <Icon className="h-[18px] w-[18px] shrink-0" aria-hidden />
+              <span className={collapsed ? 'md:sr-only' : undefined}>{t(labelKey)}</span>
+            </Tab>
+          ))}
+        </TabList>
+      </TabGroup>
     </nav>
   )
 }
