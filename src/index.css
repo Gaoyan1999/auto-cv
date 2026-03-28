@@ -1,5 +1,17 @@
 @import 'tailwindcss';
 
+@layer base {
+  /* Preflight does not set this; native buttons use the default arrow cursor. */
+  button:not(:disabled),
+  [role='button']:not([aria-disabled='true']) {
+    cursor: pointer;
+  }
+  button:disabled,
+  [role='button'][aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
