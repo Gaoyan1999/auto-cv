@@ -1,0 +1,35 @@
+{
+  "hero": {
+    "title": "Get started",
+    "editPrefix": "Edit",
+    "editFile": "src/App.tsx",
+    "editMid": "and save to test",
+    "editHmr": "HMR"
+  },
+  "counter": "Count is {{count}}",
+  "docs": {
+    "title": "Documentation",
+    "subtitle": "Your questions, answered",
+    "exploreVite": "Explore Vite",
+    "learnMore": "Learn more"
+  },
+  "social": {
+    "title": "Connect with us",
+    "subtitle": "Join the Vite community",
+    "github": "GitHub",
+    "discord": "Discord",
+    "twitter": "X.com",
+    "bluesky": "Bluesky"
+  },
+  "a11y": {
+    "reactLogo": "React logo",
+    "viteLogo": "Vite logo"
+  },
+  "lang": {
+    "en": "English",
+    "zh": "中文"
+  },
+  "common": {
+    "language": "Language"
+  }
+}

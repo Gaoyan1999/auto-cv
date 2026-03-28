@@ -1,0 +1,35 @@
+{
+  "hero": {
+    "title": "开始使用",
+    "editPrefix": "编辑",
+    "editFile": "src/App.tsx",
+    "editMid": "并保存以测试",
+    "editHmr": "热更新（HMR）"
+  },
+  "counter": "计数：{{count}}",
+  "docs": {
+    "title": "文档",
+    "subtitle": "解答你的疑问",
+    "exploreVite": "探索 Vite",
+    "learnMore": "了解更多"
+  },
+  "social": {
+    "title": "联系我们",
+    "subtitle": "加入 Vite 社区",
+    "github": "GitHub",
+    "discord": "Discord",
+    "twitter": "X.com",
+    "bluesky": "Bluesky"
+  },
+  "a11y": {
+    "reactLogo": "React 标志",
+    "viteLogo": "Vite 标志"
+  },
+  "lang": {
+    "en": "English",
+    "zh": "中文"
+  },
+  "common": {
+    "language": "语言"
+  }
+}
