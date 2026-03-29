@@ -15,13 +15,18 @@
     "openPolish": "打开并润色",
     "forkNamePrompt": "副本文件名",
     "forkDescPrompt": "说明（可选）",
+    "delete": "删除",
+    "deleteAria": "删除 {{name}}",
+    "deleteConfirm": "确定删除「{{name}}」吗？此操作无法撤销。",
     "tip": "提示：「另存为…」可在不打开编辑器的情况下复制该简历。在 AI 润色页可通过顶栏「← 我的简历」返回此列表。"
   },
   "theme": {
     "aria": "颜色主题",
     "light": "日间（浅色）",
     "dark": "夜间（深色）",
-    "system": "跟随系统"
+    "system": "跟随系统",
+    "switchToLight": "切换到浅色模式",
+    "switchToDark": "切换到深色模式"
   },
   "nav": {
     "aria": "主导航",

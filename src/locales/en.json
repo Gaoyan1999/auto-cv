@@ -15,13 +15,18 @@
     "openPolish": "Open & polish",
     "forkNamePrompt": "File name for the copy",
     "forkDescPrompt": "Description (optional)",
+    "delete": "Delete",
+    "deleteAria": "Delete {{name}}",
+    "deleteConfirm": "Delete “{{name}}”? This cannot be undone.",
     "tip": "Tip: “Save as…” duplicates a row without opening it. From AI Polish, use “← My resumes” in the header to return to this list."
   },
   "theme": {
     "aria": "Color theme",
     "light": "Day (light)",
     "dark": "Night (dark)",
-    "system": "Match system"
+    "system": "Match system",
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode"
   },
   "nav": {
     "aria": "Primary",

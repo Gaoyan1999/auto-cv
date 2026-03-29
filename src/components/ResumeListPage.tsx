@@ -1,11 +1,12 @@
-import { Copy } from 'lucide-react'
+import { Copy, Trash2 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Button } from './ui/Button'
 import { useAppState } from '../hooks/useAppState'
 
 export function ResumeListPage() {
   const { t } = useTranslation()
-  const { resumes, createResume, openResume, forkResume } = useAppState()
+  const { resumes, createResume, openResume, forkResume, deleteResume } =
+    useAppState()
 
   const sorted = [...resumes].sort((a, b) => b.updatedAt - a.updatedAt)
 
@@ -55,6 +56,15 @@ export function ResumeListPage() {
                 >
                   {t('list.openPolish')}
                 </Button>
+                <button
+                  type="button"
+                  onClick={() => deleteResume(r.id)}
+                  className="inline-flex items-center gap-2 rounded-lg border border-[var(--app-border)] px-3.5 py-2 text-sm text-red-600 transition-colors hover:border-red-300 hover:bg-red-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500 dark:text-red-400 dark:hover:border-red-800 dark:hover:bg-red-950/40"
+                  aria-label={t('list.deleteAria', { name: r.name })}
+                >
+                  <Trash2 className="h-4 w-4 shrink-0" aria-hidden />
+                  {t('list.delete')}
+                </button>
               </div>
             </div>
           </li>

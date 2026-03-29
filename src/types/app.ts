@@ -74,4 +74,5 @@ export interface AppStateValue {
   goToList: () => void
   createResume: () => void
   forkResume: (id: string) => void
+  deleteResume: (id: string) => void
 }

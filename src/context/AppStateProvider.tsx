@@ -351,6 +351,26 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
     setResumes((prev) => [...prev, copy])
   }, [])
 
+  const deleteResume = useCallback((id: string) => {
+    const r = resumesRef.current.find((x) => x.id === id)
+    if (!r) {
+      return
+    }
+    if (!window.confirm(i18n.t('list.deleteConfirm', { name: r.name }))) {
+      return
+    }
+    setResumes((prev) => {
+      const next = prev.filter((x) => x.id !== id)
+      if (next.length === 0) {
+        return [newResumeRecord()]
+      }
+      return next
+    })
+    if (activeResumeId === id) {
+      setActiveResumeId(null)
+    }
+  }, [activeResumeId])
+
   const value = useMemo<AppStateValue>(
     () => ({
       hydrated,
@@ -377,6 +397,7 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
       goToList,
       createResume,
       forkResume,
+      deleteResume,
     }),
     [
       hydrated,
@@ -402,6 +423,7 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
       goToList,
       createResume,
       forkResume,
+      deleteResume,
     ],
   )
 
