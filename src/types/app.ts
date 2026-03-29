@@ -20,6 +20,7 @@ export interface RewriteSuggestion {
 
 export type SuggestionStatus = 'pending' | 'accepted' | 'rejected'
 
+/** @deprecated Legacy single-snapshot shape (v1 IndexedDB). */
 export interface PersistedSnapshot {
   version: 1
   resume: string
@@ -29,13 +30,35 @@ export interface PersistedSnapshot {
   suggestionStatus: Record<string, SuggestionStatus>
 }
 
+export interface ResumeRecord {
+  id: string
+  name: string
+  description: string
+  body: string
+  jd: string
+  analysis: AnalysisResult | null
+  suggestions: RewriteSuggestion[]
+  suggestionStatus: Record<string, SuggestionStatus>
+  updatedAt: number
+}
+
+export interface PersistedAppState {
+  version: 2
+  resumes: ResumeRecord[]
+}
+
 export interface AppStateValue {
+  /** IndexedDB hydration finished; avoid rendering list/workspace until true. */
+  hydrated: boolean
+  resumes: ResumeRecord[]
+  activeResumeId: string | null
   tab: AppTab
   setTab: (t: AppTab) => void
+  /** Current resume Markdown (active document only). */
   resume: string
-  setResume: (v: string) => void
+  setResume: (v: string | ((prev: string) => string)) => void
   jd: string
-  setJd: (v: string) => void
+  setJd: (v: string | ((prev: string) => string)) => void
   analysis: AnalysisResult | null
   suggestions: RewriteSuggestion[]
   suggestionStatus: Record<string, SuggestionStatus>
@@ -47,4 +70,8 @@ export interface AppStateValue {
   acceptAllSuggestions: () => void
   rejectAllSuggestions: () => void
   pendingSuggestions: RewriteSuggestion[]
+  openResume: (id: string) => void
+  goToList: () => void
+  createResume: () => void
+  forkResume: (id: string) => void
 }

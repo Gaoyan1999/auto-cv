@@ -2,7 +2,20 @@
   "app": {
     "title": "求职申请助手",
     "dataLocal": "数据保存在本机浏览器，可随时导出备份。",
-    "export": "导出"
+    "dataLocalShort": "数据保存在本机浏览器。",
+    "backToList": "← 我的简历",
+    "export": "导出",
+    "loading": "加载中…"
+  },
+  "list": {
+    "title": "我的简历",
+    "subtitle": "为每份简历起名并写简短说明，方便区分不同职位或方向。",
+    "newResume": "新建简历",
+    "saveAs": "另存为…",
+    "openPolish": "打开并润色",
+    "forkNamePrompt": "副本文件名",
+    "forkDescPrompt": "说明（可选）",
+    "tip": "提示：「另存为…」可在不打开编辑器的情况下复制该简历。在 AI 润色页可通过顶栏「← 我的简历」返回此列表。"
   },
   "theme": {
     "aria": "颜色主题",

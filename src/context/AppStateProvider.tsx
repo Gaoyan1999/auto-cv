@@ -6,37 +6,21 @@ import {
   useState,
   type ReactNode,
 } from 'react'
-import { DEFAULT_RESUME } from '../constants/defaultResume'
 import { AppStateContext } from './app-state-context'
+import { DEFAULT_RESUME } from '../constants/defaultResume'
+import { loadAppState, saveAppState } from '../lib/db'
+import i18n from '../i18n'
 import { runAnalysisJob } from '../lib/analyze'
-import { loadSnapshot, saveSnapshot } from '../lib/db'
 import type {
-  AnalysisResult,
   AppStateValue,
   AppTab,
-  PersistedSnapshot,
+  PersistedAppState,
+  ResumeRecord,
   RewriteSuggestion,
   SuggestionStatus,
 } from '../types/app'
 
 type AnalysisPhase = 'idle' | 'running' | 'done' | 'error'
-
-function snapshotFromState(
-  resume: string,
-  jd: string,
-  analysis: AnalysisResult | null,
-  suggestions: RewriteSuggestion[],
-  suggestionStatus: Record<string, SuggestionStatus>,
-): PersistedSnapshot {
-  return {
-    version: 1,
-    resume,
-    jd,
-    analysis,
-    suggestions,
-    suggestionStatus,
-  }
-}
 
 function applySuggestionToResume(
   resume: string,
@@ -60,39 +44,70 @@ function applyAllInOrder(resume: string, list: RewriteSuggestion[]): string {
   return r
 }
 
+function snapshotFromResumes(resumes: ResumeRecord[]): PersistedAppState {
+  return { version: 2, resumes }
+}
+
+function newResumeRecord(): ResumeRecord {
+  const id = crypto.randomUUID()
+  const day = new Date().toISOString().slice(0, 10)
+  return {
+    id,
+    name: `resume-${day}.md`,
+    description: '',
+    body: DEFAULT_RESUME,
+    jd: '',
+    analysis: null,
+    suggestions: [],
+    suggestionStatus: {},
+    updatedAt: Date.now(),
+  }
+}
+
 export function AppStateProvider({ children }: { children: ReactNode }) {
+  const [resumes, setResumes] = useState<ResumeRecord[]>([])
+  const [activeResumeId, setActiveResumeId] = useState<string | null>(null)
   const [tab, setTab] = useState<AppTab>('resume')
-  const [resume, setResume] = useState(DEFAULT_RESUME)
-  const [jd, setJd] = useState('')
-  const [analysis, setAnalysis] = useState<AnalysisResult | null>(null)
-  const [suggestions, setSuggestions] = useState<RewriteSuggestion[]>([])
-  const [suggestionStatus, setSuggestionStatus] = useState<
-    Record<string, SuggestionStatus>
-  >({})
   const [analysisPhase, setAnalysisPhase] = useState<AnalysisPhase>('idle')
   const [analysisError, setAnalysisError] = useState<string | null>(null)
   const [hydrated, setHydrated] = useState(false)
 
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const suggestionsRef = useRef(suggestions)
+  const suggestionsRef = useRef<RewriteSuggestion[]>([])
+  const resumesRef = useRef<ResumeRecord[]>([])
+
+  const activeResume = useMemo(
+    () =>
+      activeResumeId
+        ? resumes.find((r) => r.id === activeResumeId)
+        : undefined,
+    [resumes, activeResumeId],
+  )
+
+  const resume = activeResume?.body ?? ''
+  const jd = activeResume?.jd ?? ''
+  const analysis = activeResume?.analysis ?? null
+  const suggestions = useMemo(
+    () => activeResume?.suggestions ?? [],
+    [activeResume],
+  )
+  const suggestionStatus = useMemo(
+    () => activeResume?.suggestionStatus ?? {},
+    [activeResume],
+  )
 
   useEffect(() => {
     suggestionsRef.current = suggestions
   }, [suggestions])
 
   useEffect(() => {
+    resumesRef.current = resumes
+  }, [resumes])
+
+  useEffect(() => {
     void (async () => {
-      const snap = await loadSnapshot()
-      if (snap) {
-        setResume(snap.resume ?? DEFAULT_RESUME)
-        setJd(snap.jd ?? '')
-        setAnalysis(snap.analysis)
-        setSuggestions(snap.suggestions ?? [])
-        setSuggestionStatus(snap.suggestionStatus ?? {})
-        if (snap.analysis) {
-          setAnalysisPhase('done')
-        }
-      }
+      const state = await loadAppState()
+      setResumes(state.resumes)
       setHydrated(true)
     })()
   }, [])
@@ -105,83 +120,242 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
       clearTimeout(saveTimer.current)
     }
     saveTimer.current = setTimeout(() => {
-      void saveSnapshot(
-        snapshotFromState(resume, jd, analysis, suggestions, suggestionStatus),
-      )
+      void saveAppState(snapshotFromResumes(resumes))
     }, 450)
     return () => {
       if (saveTimer.current) {
         clearTimeout(saveTimer.current)
       }
     }
-  }, [hydrated, resume, jd, analysis, suggestions, suggestionStatus])
+  }, [hydrated, resumes])
+
+  const setResume = useCallback(
+    (next: string | ((prev: string) => string)) => {
+      if (!activeResumeId) {
+        return
+      }
+      setResumes((prev) =>
+        prev.map((r) => {
+          if (r.id !== activeResumeId) {
+            return r
+          }
+          const body = typeof next === 'function' ? next(r.body) : next
+          return { ...r, body, updatedAt: Date.now() }
+        }),
+      )
+    },
+    [activeResumeId],
+  )
+
+  const setJd = useCallback(
+    (next: string | ((prev: string) => string)) => {
+      if (!activeResumeId) {
+        return
+      }
+      setResumes((prev) =>
+        prev.map((r) => {
+          if (r.id !== activeResumeId) {
+            return r
+          }
+          const jdNext = typeof next === 'function' ? next(r.jd) : next
+          return { ...r, jd: jdNext, updatedAt: Date.now() }
+        }),
+      )
+    },
+    [activeResumeId],
+  )
 
   const runAnalysis = useCallback(async () => {
+    const id = activeResumeId
+    if (!id) {
+      return
+    }
+    const r = resumesRef.current.find((x) => x.id === id)
+    if (!r) {
+      return
+    }
     setAnalysisPhase('running')
     setAnalysisError(null)
     try {
-      const { result, suggestions: next } = await runAnalysisJob(resume, jd)
-      setAnalysis(result)
-      setSuggestions(next)
-      const nextStatus: Record<string, SuggestionStatus> = {}
-      for (const s of next) {
-        nextStatus[s.id] = 'pending'
-      }
-      setSuggestionStatus(nextStatus)
+      const { result, suggestions: next } = await runAnalysisJob(r.body, r.jd)
+      setResumes((prev) =>
+        prev.map((x) =>
+          x.id === id
+            ? {
+                ...x,
+                analysis: result,
+                suggestions: next,
+                suggestionStatus: Object.fromEntries(
+                  next.map((s) => [s.id, 'pending' as SuggestionStatus]),
+                ),
+                updatedAt: Date.now(),
+              }
+            : x,
+        ),
+      )
       setAnalysisPhase('done')
       setTab('analysis')
     } catch (e) {
       setAnalysisPhase('error')
       setAnalysisError(e instanceof Error ? e.message : 'Unknown error')
     }
-  }, [resume, jd])
+  }, [activeResumeId])
 
-  const acceptSuggestion = useCallback((id: string) => {
-    const s = suggestionsRef.current.find((x) => x.id === id)
-    if (!s) {
-      return
-    }
-    setResume((r) => applySuggestionToResume(r, s.oldText, s.newText))
-    setSuggestionStatus((st) => ({ ...st, [id]: 'accepted' }))
-  }, [])
+  const acceptSuggestion = useCallback(
+    (id: string) => {
+      if (!activeResumeId) {
+        return
+      }
+      setResumes((prev) => {
+        const r = prev.find((x) => x.id === activeResumeId)
+        if (!r) {
+          return prev
+        }
+        const s = r.suggestions.find((x) => x.id === id)
+        if (!s) {
+          return prev
+        }
+        const body = applySuggestionToResume(r.body, s.oldText, s.newText)
+        return prev.map((x) =>
+          x.id === activeResumeId
+            ? {
+                ...x,
+                body,
+                suggestionStatus: { ...x.suggestionStatus, [id]: 'accepted' },
+                updatedAt: Date.now(),
+              }
+            : x,
+        )
+      })
+    },
+    [activeResumeId],
+  )
 
-  const rejectSuggestion = useCallback((id: string) => {
-    setSuggestionStatus((st) => ({ ...st, [id]: 'rejected' }))
-  }, [])
+  const rejectSuggestion = useCallback(
+    (id: string) => {
+      if (!activeResumeId) {
+        return
+      }
+      setResumes((prev) =>
+        prev.map((x) =>
+          x.id === activeResumeId
+            ? {
+                ...x,
+                suggestionStatus: { ...x.suggestionStatus, [id]: 'rejected' },
+                updatedAt: Date.now(),
+              }
+            : x,
+        ),
+      )
+    },
+    [activeResumeId],
+  )
 
   const pendingSuggestions = useMemo(() => {
-    return suggestions.filter((s) => suggestionStatus[s.id] === 'pending')
-  }, [suggestions, suggestionStatus])
+    if (!activeResume) {
+      return []
+    }
+    return activeResume.suggestions.filter(
+      (s) => activeResume.suggestionStatus[s.id] === 'pending',
+    )
+  }, [activeResume])
 
   const acceptAllSuggestions = useCallback(() => {
-    const pending = suggestions.filter((s) => suggestionStatus[s.id] === 'pending')
+    if (!activeResumeId || !activeResume) {
+      return
+    }
+    const pending = activeResume.suggestions.filter(
+      (s) => activeResume.suggestionStatus[s.id] === 'pending',
+    )
     if (!pending.length) {
       return
     }
-    setResume((r) => applyAllInOrder(r, pending))
-    setSuggestionStatus((st) => {
-      const next = { ...st }
-      for (const s of pending) {
-        next[s.id] = 'accepted'
-      }
-      return next
-    })
-  }, [suggestions, suggestionStatus])
+    const body = applyAllInOrder(activeResume.body, pending)
+    setResumes((prev) =>
+      prev.map((x) => {
+        if (x.id !== activeResumeId) {
+          return x
+        }
+        const nextStatus = { ...x.suggestionStatus }
+        for (const s of pending) {
+          nextStatus[s.id] = 'accepted'
+        }
+        return { ...x, body, suggestionStatus: nextStatus, updatedAt: Date.now() }
+      }),
+    )
+  }, [activeResume, activeResumeId])
 
   const rejectAllSuggestions = useCallback(() => {
-    setSuggestionStatus((st) => {
-      const next = { ...st }
-      for (const s of suggestions) {
-        if (next[s.id] === 'pending') {
-          next[s.id] = 'rejected'
+    if (!activeResumeId || !activeResume) {
+      return
+    }
+    setResumes((prev) =>
+      prev.map((x) => {
+        if (x.id !== activeResumeId) {
+          return x
         }
-      }
-      return next
-    })
-  }, [suggestions])
+        const nextStatus = { ...x.suggestionStatus }
+        for (const s of x.suggestions) {
+          if (nextStatus[s.id] === 'pending') {
+            nextStatus[s.id] = 'rejected'
+          }
+        }
+        return { ...x, suggestionStatus: nextStatus, updatedAt: Date.now() }
+      }),
+    )
+  }, [activeResume, activeResumeId])
+
+  const openResume = useCallback((id: string) => {
+    const r = resumesRef.current.find((x) => x.id === id)
+    setActiveResumeId(id)
+    setTab('resume')
+    setAnalysisPhase(r?.analysis ? 'done' : 'idle')
+    setAnalysisError(null)
+  }, [])
+
+  const goToList = useCallback(() => {
+    setActiveResumeId(null)
+  }, [])
+
+  const createResume = useCallback(() => {
+    const rec = newResumeRecord()
+    setResumes((prev) => [...prev, rec])
+    setActiveResumeId(rec.id)
+    setTab('resume')
+    setAnalysisPhase('idle')
+    setAnalysisError(null)
+  }, [])
+
+  const forkResume = useCallback((id: string) => {
+    const source = resumesRef.current.find((r) => r.id === id)
+    if (!source) {
+      return
+    }
+    const baseName = source.name.replace(/\.md$/i, '')
+    const nameIn = window.prompt(
+      i18n.t('list.forkNamePrompt'),
+      `${baseName}-copy.md`,
+    )
+    if (nameIn == null || !nameIn.trim()) {
+      return
+    }
+    const descIn = window.prompt(i18n.t('list.forkDescPrompt'), source.description)
+    const desc = descIn ?? ''
+    const copy: ResumeRecord = {
+      ...source,
+      id: crypto.randomUUID(),
+      name: nameIn.trim(),
+      description: desc.trim(),
+      updatedAt: Date.now(),
+    }
+    setResumes((prev) => [...prev, copy])
+  }, [])
 
   const value = useMemo<AppStateValue>(
     () => ({
+      hydrated,
+      resumes,
+      activeResumeId,
       tab,
       setTab,
       resume,
@@ -199,11 +373,20 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
       acceptAllSuggestions,
       rejectAllSuggestions,
       pendingSuggestions,
+      openResume,
+      goToList,
+      createResume,
+      forkResume,
     }),
     [
+      hydrated,
+      resumes,
+      activeResumeId,
       tab,
       resume,
+      setResume,
       jd,
+      setJd,
       analysis,
       suggestions,
       suggestionStatus,
@@ -215,6 +398,10 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
       acceptAllSuggestions,
       rejectAllSuggestions,
       pendingSuggestions,
+      openResume,
+      goToList,
+      createResume,
+      forkResume,
     ],
   )
 

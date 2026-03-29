@@ -2,7 +2,20 @@
   "app": {
     "title": "Job Application Assistant",
     "dataLocal": "Data stays in your browser. Export a backup anytime.",
-    "export": "Export"
+    "dataLocalShort": "Data stays in your browser.",
+    "backToList": "← My resumes",
+    "export": "Export",
+    "loading": "Loading…"
+  },
+  "list": {
+    "title": "My resumes",
+    "subtitle": "Name each file and add a short description so you know which posting or role it targets.",
+    "newResume": "New resume",
+    "saveAs": "Save as…",
+    "openPolish": "Open & polish",
+    "forkNamePrompt": "File name for the copy",
+    "forkDescPrompt": "Description (optional)",
+    "tip": "Tip: “Save as…” duplicates a row without opening it. From AI Polish, use “← My resumes” in the header to return to this list."
   },
   "theme": {
     "aria": "Color theme",
