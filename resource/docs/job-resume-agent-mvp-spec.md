@@ -1,7 +1,7 @@
 # Job Application Assistant — MVP Product Specification
 
 **Document status:** Draft aligned with current product decisions  
-**Last updated:** 2026-03-28
+**Last updated:** 2026-03-29 (v0.3)
 
 ## One-line summary
 
@@ -48,8 +48,11 @@ Active job seekers who apply to multiple postings (including role or industry sw
 ### Core capabilities
 
 1. **Resume workspace**
-   - Create / edit / preview **at least one** resume.
-   - Format: **Markdown** for v1 (LaTeX and rich templates are **out of scope** for MVP unless explicitly reprioritized).
+   - Support **multiple resumes** in the browser (e.g. distinct variants for “Full-stack developer,” “LLM / ML engineer,” etc.).
+   - Each resume has a **display name / filename** and an optional **description** (short note such as target role, company type, or stack—so users know which variant to open for a given application).
+   - **Resume list (home):** a single screen listing all saved resumes with name + description; actions include **New resume**, **Save as…** on each row (fork that resume into a new entry without opening the editor), and **Open & polish** (enters the existing **AI Polish** flow—editor + JD + analysis for that resume).
+   - **AI Polish workspace** (current implementation): the primary editing and JD-matching flow for **one** selected resume at a time. **Save as…** is not required in this header; duplication is available from the list row (see above). **Return to list:** a persistent control in the app header (e.g. **← My resumes** beside the product name) navigates back to the resume list without losing local data; browser Back may also return if routing uses history.
+   - Create / edit / preview resumes in **Markdown** for v1 (LaTeX and rich templates are **out of scope** for MVP unless explicitly reprioritized).
 
 2. **JD ingestion**
    - Single primary input: **paste JD plain text** (large text area).
@@ -65,12 +68,16 @@ Active job seekers who apply to multiple postings (including role or industry sw
    - **Explicit user control:** side-by-side or diff-style **accept / reject**; no silent overwrite of the canonical resume.
 
 5. **Data safety for users without accounts**
-   - **Export / backup:** e.g. download resume (and optional analysis metadata) as JSON or Markdown so clearing the browser does not mean total loss.
+   - **Export / backup:** e.g. download one resume, all resumes, or optional analysis metadata as JSON or Markdown so clearing the browser does not mean total loss.
    - Short **privacy copy** on how data is stored and whether it is sent to a model API (if applicable).
+
+6. **Multi-resume information architecture (conceptual)**
+   - **Storage:** extend local-first persistence (IndexedDB) to hold a **collection** of resume records, each with `id`, **name**, **description**, Markdown body, and timestamps; analyses can remain scoped to “current resume + pasted JD” as today.
+   - **Navigation:** list → pick resume → AI Polish; from Polish, **← My resumes** (header) returns to the list. **Save as…** on a list row creates a new record copied from that resume (fork); optionally open the new copy or stay on the list—exact behavior to confirm in UX; prototype in Pencil targets **fork with clear naming moment**.
 
 ### Explicit non-goals (MVP)
 
-- User accounts and cloud sync.
+- User accounts and cloud sync (multiple resumes remain **device-local** only).
 - Guaranteed automatic **full-page fetch** of JDs from LinkedIn / Seek / etc. via URL (often blocked by auth, CORS, or terms of use from the **browser alone**).
 - LaTeX authoring pipeline.
 - Fully automated scraping of third-party job boards.
@@ -124,3 +131,5 @@ Automation should **reduce friction**, not block launch.
 | Version | Date | Notes |
 |---------|------|--------|
 | 0.1 | 2026-03-28 | Initial spec from MVP alignment (web, no login, IndexedDB, paste-first, automation phased). |
+| 0.2 | 2026-03-29 | Multi-resume: list (name + description), New / row-level Save as… (fork) / Open & polish; AI Polish header without Save as; storage as collection (conceptual). |
+| 0.3 | 2026-03-29 | Polish → list: header **← My resumes** (Pencil on screens 01–04); spec updated. |

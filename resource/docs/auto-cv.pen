@@ -32,14 +32,31 @@
           "alignItems": "center",
           "children": [
             {
-              "type": "text",
-              "id": "DdhfR",
-              "name": "brand",
-              "fill": "$text-primary",
-              "content": "Job Application Assistant",
-              "fontFamily": "Inter",
-              "fontSize": 18,
-              "fontWeight": "600"
+              "type": "frame",
+              "id": "tE1qh",
+              "name": "brandRow",
+              "gap": 14,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "nsPP8",
+                  "fill": "$accent",
+                  "content": "← My resumes",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "JHDmu",
+                  "fill": "$text-primary",
+                  "content": "Job Application Assistant",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                }
+              ]
             },
             {
               "type": "frame",
@@ -1184,14 +1201,31 @@
           "alignItems": "center",
           "children": [
             {
-              "type": "text",
-              "id": "ZRTVA",
-              "name": "brand",
-              "fill": "$text-primary",
-              "content": "Job Application Assistant",
-              "fontFamily": "Inter",
-              "fontSize": 18,
-              "fontWeight": "600"
+              "type": "frame",
+              "id": "95ev6",
+              "name": "brandRow",
+              "gap": 14,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "p85zy",
+                  "fill": "$accent",
+                  "content": "← My resumes",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "1Sx06",
+                  "fill": "$text-primary",
+                  "content": "Job Application Assistant",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                }
+              ]
             },
             {
               "type": "frame",
@@ -1706,14 +1740,31 @@
           "alignItems": "center",
           "children": [
             {
-              "type": "text",
-              "id": "kqZBw",
-              "name": "brand",
-              "fill": "$text-primary",
-              "content": "Job Application Assistant",
-              "fontFamily": "Inter",
-              "fontSize": 18,
-              "fontWeight": "600"
+              "type": "frame",
+              "id": "R2BYD",
+              "name": "brandRow",
+              "gap": 14,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "EazK9",
+                  "fill": "$accent",
+                  "content": "← My resumes",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "JqSVk",
+                  "fill": "$text-primary",
+                  "content": "Job Application Assistant",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                }
+              ]
             },
             {
               "type": "frame",
@@ -2653,22 +2704,49 @@
           "alignItems": "center",
           "children": [
             {
-              "type": "text",
-              "id": "wNU0d",
-              "fill": "$text-primary",
-              "content": "Job Application Assistant",
-              "fontFamily": "Inter",
-              "fontSize": 18,
-              "fontWeight": "600"
+              "type": "frame",
+              "id": "hR4A3",
+              "name": "brandRow",
+              "gap": 14,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "FNTNu",
+                  "fill": "$accent",
+                  "content": "← My resumes",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "xKFlO",
+                  "fill": "$text-primary",
+                  "content": "Job Application Assistant",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                }
+              ]
             },
             {
-              "type": "text",
-              "id": "IrLrw",
-              "fill": "$text-muted",
-              "content": "Data stays in your browser",
-              "fontFamily": "Inter",
-              "fontSize": 12,
-              "fontWeight": "normal"
+              "type": "frame",
+              "id": "hSHOT",
+              "name": "rc",
+              "gap": 14,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "KRmt5",
+                  "fill": "$text-muted",
+                  "content": "Data stays in your browser",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
             }
           ]
         },
@@ -4040,6 +4118,539 @@
           "fontFamily": "Inter",
           "fontSize": 12,
           "fontWeight": "normal"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "6yB6c",
+      "x": -1488,
+      "y": -10,
+      "name": "00 My resumes — list",
+      "width": 1440,
+      "height": 900,
+      "fill": "$bg-canvas",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "6RJWH",
+          "name": "tb",
+          "width": "fill_container",
+          "fill": "#FFFFFF",
+          "stroke": {
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "#E7E5E4"
+          },
+          "padding": [
+            18,
+            28
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "58Txw",
+              "fill": "$text-primary",
+              "content": "Job Application Assistant",
+              "fontFamily": "Inter",
+              "fontSize": 18,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "1XrCI",
+              "name": "actL",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "ij8uR",
+                  "fill": "$text-muted",
+                  "content": "Data stays in your browser",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "6kRPe",
+          "name": "main",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 20,
+          "padding": 32,
+          "children": [
+            {
+              "type": "frame",
+              "id": "WEPU4",
+              "name": "rowT",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "qi1CU",
+                  "fill": "$text-primary",
+                  "content": "My resumes",
+                  "fontFamily": "Inter",
+                  "fontSize": 22,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "L7454",
+                  "name": "newResume",
+                  "fill": "$accent",
+                  "cornerRadius": 8,
+                  "gap": 8,
+                  "padding": [
+                    10,
+                    16
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "7dpMV",
+                      "fill": "#FFFFFF",
+                      "content": "New resume",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "N2nNq",
+              "fill": "$text-secondary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Name each file and add a short description so you know which posting or role it targets.",
+              "lineHeight": 1.4,
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "X8Lvt",
+              "name": "card",
+              "width": "fill_container",
+              "fill": "$surface",
+              "cornerRadius": 10,
+              "stroke": {
+                "thickness": 1,
+                "fill": "$border-default"
+              },
+              "layout": "vertical",
+              "gap": 12,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "cbVjI",
+                  "name": "r1",
+                  "width": "fill_container",
+                  "gap": 24,
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "H7qZL",
+                      "name": "l1",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "FlRWA",
+                          "fill": "$text-primary",
+                          "content": "full-stack-developer.md",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "CyF8L",
+                          "fill": "$text-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Full-stack · TypeScript, Node, B2B SaaS",
+                          "lineHeight": 1.4,
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "nNb4C",
+                      "name": "rowActions",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "KnJYG",
+                          "name": "saveAs",
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "$border-default"
+                          },
+                          "gap": 6,
+                          "padding": [
+                            8,
+                            14
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "ELVZv",
+                              "width": 16,
+                              "height": 16,
+                              "iconFontName": "copy",
+                              "iconFontFamily": "lucide",
+                              "fill": "$text-secondary"
+                            },
+                            {
+                              "type": "text",
+                              "id": "CXtas",
+                              "fill": "$text-secondary",
+                              "content": "Save as…",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "AXiiu",
+                          "name": "openPolish",
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "$border-default"
+                          },
+                          "gap": 6,
+                          "padding": [
+                            8,
+                            14
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "99buW",
+                              "fill": "$text-primary",
+                              "content": "Open & polish",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "2ZroV",
+              "name": "card",
+              "width": "fill_container",
+              "fill": "$surface",
+              "cornerRadius": 10,
+              "stroke": {
+                "thickness": 1,
+                "fill": "$border-default"
+              },
+              "layout": "vertical",
+              "gap": 12,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "3OMVJ",
+                  "name": "r2",
+                  "width": "fill_container",
+                  "gap": 24,
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "AWxZ6",
+                      "name": "l2",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "1TLKh",
+                          "fill": "$text-primary",
+                          "content": "llm-engineer.md",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "rq15e",
+                          "fill": "$text-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "LLM apps · Python, evals, RAG, on-call ML",
+                          "lineHeight": 1.4,
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "8b8k1",
+                      "name": "rowActions",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "7b3Vj",
+                          "name": "saveAs",
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "$border-default"
+                          },
+                          "gap": 6,
+                          "padding": [
+                            8,
+                            14
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "ti4Wu",
+                              "width": 16,
+                              "height": 16,
+                              "iconFontName": "copy",
+                              "iconFontFamily": "lucide",
+                              "fill": "$text-secondary"
+                            },
+                            {
+                              "type": "text",
+                              "id": "exEIe",
+                              "fill": "$text-secondary",
+                              "content": "Save as…",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Mbz2w",
+                          "name": "openPolish",
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "$border-default"
+                          },
+                          "gap": 6,
+                          "padding": [
+                            8,
+                            14
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "qXF8L",
+                              "fill": "$text-primary",
+                              "content": "Open & polish",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "QAhgC",
+              "name": "card",
+              "width": "fill_container",
+              "fill": "$surface",
+              "cornerRadius": 10,
+              "stroke": {
+                "thickness": 1,
+                "fill": "$border-default"
+              },
+              "layout": "vertical",
+              "gap": 12,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "HurZj",
+                  "name": "r3",
+                  "width": "fill_container",
+                  "gap": 24,
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "lThT1",
+                      "name": "l3",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "aU1Wa",
+                          "fill": "$text-primary",
+                          "content": "product-design-lead.md",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "iB6zo",
+                          "fill": "$text-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Design leadership · systems, Figma, cross-functional",
+                          "lineHeight": 1.4,
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "oL5pS",
+                      "name": "rowActions",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "7nj7B",
+                          "name": "saveAs",
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "$border-default"
+                          },
+                          "gap": 6,
+                          "padding": [
+                            8,
+                            14
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "L0dg3",
+                              "width": 16,
+                              "height": 16,
+                              "iconFontName": "copy",
+                              "iconFontFamily": "lucide",
+                              "fill": "$text-secondary"
+                            },
+                            {
+                              "type": "text",
+                              "id": "oau3U",
+                              "fill": "$text-secondary",
+                              "content": "Save as…",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "kqGyH",
+                          "name": "openPolish",
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "$border-default"
+                          },
+                          "gap": 6,
+                          "padding": [
+                            8,
+                            14
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "BhMss",
+                              "fill": "$text-primary",
+                              "content": "Open & polish",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "K3cXL",
+              "fill": "$text-muted",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Tip: use “Save as…” on a row to duplicate that resume into a new file without opening it.",
+              "lineHeight": 1.45,
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            }
+          ]
         }
       ]
     }
