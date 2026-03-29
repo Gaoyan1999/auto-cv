@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Navigate, Route, Routes, useNavigate, useParams } from 'react-router-dom';
+import { Navigate, Route, Routes, useParams } from 'react-router-dom';
 import { AppHeader } from './components/AppHeader';
 import { AnalysisPanel } from './components/analysis/AnalysisPanel';
 import { ResumeListPage } from './components/ResumeListPage';
@@ -8,6 +8,8 @@ import { ResumeWorkspace } from './components/resume/ResumeWorkspace';
 import { SidebarNav } from './components/SidebarNav';
 import { AppStateProvider } from './context/AppStateProvider';
 import { useAppState } from './hooks/useAppState';
+import { AppPath, RoutePattern } from './routes/routes';
+import { useAppNavigate } from './routes/useAppNavigate';
 import type { AppTab } from './types/app';
 import './App.css';
 
@@ -40,15 +42,15 @@ function ListPage() {
 function PolishIndexRedirect() {
   const { resumeId } = useParams();
   if (!resumeId) {
-    return <Navigate to="/list" replace />;
+    return <Navigate to={AppPath.list()} replace />;
   }
-  return <Navigate to={`/polish/${resumeId}/resume`} replace />;
+  return <Navigate to={AppPath.polish(resumeId, 'resume')} replace />;
 }
 
 function PolishPage() {
   const { t } = useTranslation();
   const { resumeId, section } = useParams();
-  const navigate = useNavigate();
+  const { goToList, goToPolish } = useAppNavigate();
   const { hydrated, resumes, openResume } = useAppState();
   const resumesRef = useRef(resumes);
   useEffect(() => {
@@ -60,16 +62,16 @@ function PolishPage() {
       return;
     }
     if (section !== 'resume' && section !== 'analysis') {
-      navigate(`/polish/${resumeId}/resume`, { replace: true });
+      goToPolish(resumeId, 'resume', { replace: true });
       return;
     }
     const exists = resumesRef.current.some((r) => r.id === resumeId);
     if (!exists) {
-      navigate('/list', { replace: true });
+      goToList({ replace: true });
       return;
     }
     openResume(resumeId, section as AppTab);
-  }, [hydrated, resumeId, section, navigate, openResume]);
+  }, [hydrated, resumeId, section, goToList, goToPolish, openResume]);
 
   if (!hydrated) {
     return <LoadingScreen />;
@@ -109,11 +111,14 @@ function AppRoutes() {
 
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/list" replace />} />
-      <Route path="/list" element={<ListPage />} />
-      <Route path="/polish/:resumeId" element={<PolishIndexRedirect />} />
-      <Route path="/polish/:resumeId/:section" element={<PolishPage />} />
-      <Route path="*" element={<Navigate to="/list" replace />} />
+      <Route
+        path={RoutePattern.Root}
+        element={<Navigate to={AppPath.list()} replace />}
+      />
+      <Route path={RoutePattern.List} element={<ListPage />} />
+      <Route path={RoutePattern.Polish} element={<PolishIndexRedirect />} />
+      <Route path={RoutePattern.PolishSection} element={<PolishPage />} />
+      <Route path="*" element={<Navigate to={AppPath.list()} replace />} />
     </Routes>
   );
 }

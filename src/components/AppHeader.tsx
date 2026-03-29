@@ -1,6 +1,6 @@
 import { Download } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
+import { useAppNavigate } from '../routes/useAppNavigate';
 import { buildExportAllPayload, downloadJson } from '../lib/exportBackup';
 import { useAppState } from '../hooks/useAppState';
 import { LanguageSwitcher } from './LanguageSwitcher';
@@ -10,7 +10,7 @@ type HeaderVariant = 'list' | 'workspace';
 
 export function AppHeader({ variant }: { variant: HeaderVariant }) {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const { goToList } = useAppNavigate();
   const { resumes } = useAppState();
 
   const onExport = () => {
@@ -30,7 +30,7 @@ export function AppHeader({ variant }: { variant: HeaderVariant }) {
           <>
             <button
               type="button"
-              onClick={() => navigate('/list')}
+              onClick={() => goToList()}
               className="shrink-0 text-sm font-semibold text-[var(--app-accent)] transition-colors hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--app-accent)]"
             >
               {t('app.backToList')}

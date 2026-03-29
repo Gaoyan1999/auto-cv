@@ -1,6 +1,6 @@
 import { AlertCircle, FileText, RefreshCw } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
+import { useAppNavigate } from '../../routes/useAppNavigate';
 import { assessJobDescription } from '../../lib/jdValidation';
 import { Button } from '../ui/Button';
 import { useAppState } from '../../hooks/useAppState';
@@ -11,7 +11,7 @@ import {
 
 export function AnalysisPanel() {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const { goToPolish } = useAppNavigate();
   const {
     activeResumeId,
     analysis,
@@ -174,7 +174,7 @@ export function AnalysisPanel() {
                 variant="primary"
                 onClick={() => {
                   if (activeResumeId) {
-                    navigate(`/polish/${activeResumeId}/resume`);
+                    goToPolish(activeResumeId, 'resume');
                   }
                 }}
               >
