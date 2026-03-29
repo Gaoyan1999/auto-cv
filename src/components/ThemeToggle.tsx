@@ -1,13 +1,13 @@
-import { Moon, Sun } from 'lucide-react'
-import { useTranslation } from 'react-i18next'
-import { useTheme } from '../hooks/useTheme'
+import { Moon, Sun } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { useTheme } from '../hooks/useTheme';
 
 export function ThemeToggle() {
-  const { t } = useTranslation()
-  const { resolvedTheme, setTheme } = useTheme()
+  const { t } = useTranslation();
+  const { resolvedTheme, setTheme } = useTheme();
 
-  const isDark = resolvedTheme === 'dark'
-  const Icon = isDark ? Moon : Sun
+  const isDark = resolvedTheme === 'dark';
+  const Icon = isDark ? Moon : Sun;
 
   return (
     <div className="app-lang app-lang-icons">
@@ -23,5 +23,5 @@ export function ThemeToggle() {
         </span>
       </button>
     </div>
-  )
+  );
 }

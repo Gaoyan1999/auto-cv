@@ -1,12 +1,12 @@
-import { Sparkles } from 'lucide-react'
-import { useTranslation } from 'react-i18next'
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
-import { Button } from '../ui/Button'
-import { useAppState } from '../../hooks/useAppState'
+import { Sparkles } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import { Button } from '../ui/Button';
+import { useAppState } from '../../hooks/useAppState';
 
 export function ResumeWorkspace() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
   const {
     resume,
     setResume,
@@ -17,13 +17,13 @@ export function ResumeWorkspace() {
     rejectSuggestion,
     acceptAllSuggestions,
     rejectAllSuggestions,
-  } = useAppState()
+  } = useAppState();
 
-  const pendingCount = pendingSuggestions.length
+  const pendingCount = pendingSuggestions.length;
 
   return (
     <div className="flex min-h-0 flex-1 flex-col gap-5 p-6 md:p-8">
-      <p className="text-left text-xs font-semibold uppercase tracking-wide text-[var(--app-accent)]">
+      <p className="text-left text-xs font-semibold tracking-wide text-[var(--app-accent)] uppercase">
         {t('resume.step')}
       </p>
 
@@ -81,7 +81,10 @@ export function ResumeWorkspace() {
       </div>
 
       {suggestions.some((s) => suggestionStatus[s.id] === 'pending') ? (
-        <section className="flex flex-col gap-3" aria-label={t('resume.suggestionsRegion')}>
+        <section
+          className="flex flex-col gap-3"
+          aria-label={t('resume.suggestionsRegion')}
+        >
           <div className="flex items-center gap-2 text-sm font-medium text-[var(--app-text)]">
             <Sparkles
               className="h-4 w-4 text-[var(--app-accent)]"
@@ -122,20 +125,26 @@ export function ResumeWorkspace() {
                       {s.sectionHint}
                     </p>
                     <div className="flex gap-2">
-                      <Button variant="secondary" onClick={() => rejectSuggestion(s.id)}>
+                      <Button
+                        variant="secondary"
+                        onClick={() => rejectSuggestion(s.id)}
+                      >
                         {t('resume.reject')}
                       </Button>
-                      <Button variant="primary" onClick={() => acceptSuggestion(s.id)}>
+                      <Button
+                        variant="primary"
+                        onClick={() => acceptSuggestion(s.id)}
+                      >
                         {t('resume.accept')}
                       </Button>
                     </div>
                   </div>
                 </li>
-              ) : null,
+              ) : null
             )}
           </ul>
         </section>
       ) : null}
     </div>
-  )
+  );
 }

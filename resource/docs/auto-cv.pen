@@ -1175,9 +1175,9 @@
       "id": "8HGay",
       "x": 1488,
       "y": -10,
-      "name": "02 Job description — empty",
+      "name": "02a · Phase 1 Paste JD",
       "width": 1440,
-      "height": 900,
+      "height": 960,
       "fill": "$bg-canvas",
       "layout": "vertical",
       "children": [
@@ -1420,44 +1420,11 @@
                 },
                 {
                   "type": "frame",
-                  "id": "kfDpT",
-                  "name": "nav2",
-                  "fill": "#FFFBEB",
-                  "cornerRadius": 10,
-                  "gap": 10,
-                  "padding": [
-                    10,
-                    14
-                  ],
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "icon_font",
-                      "id": "ZZkVH",
-                      "name": "ico2",
-                      "width": 18,
-                      "height": 18,
-                      "iconFontName": "clipboard-list",
-                      "iconFontFamily": "lucide",
-                      "fill": "#D97706"
-                    },
-                    {
-                      "type": "text",
-                      "id": "UtB0e",
-                      "name": "lbl2",
-                      "fill": "#1C1917",
-                      "content": "Job description",
-                      "fontFamily": "Inter",
-                      "fontSize": 14,
-                      "fontWeight": "600"
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "Z2I6f",
+                  "id": "rF5Au",
                   "name": "nav3",
-                  "fill": "#FAFAF9",
+                  "rotation": 0.37713272025624794,
+                  "height": 37,
+                  "fill": "#FFFBEB",
                   "cornerRadius": 10,
                   "gap": 10,
                   "padding": [
@@ -1468,23 +1435,23 @@
                   "children": [
                     {
                       "type": "icon_font",
-                      "id": "l1tIm",
+                      "id": "wGSMJ",
                       "name": "ico3",
                       "width": 18,
                       "height": 18,
                       "iconFontName": "scan-search",
                       "iconFontFamily": "lucide",
-                      "fill": "#78716C"
+                      "fill": "#D97706"
                     },
                     {
                       "type": "text",
-                      "id": "pRCbg",
+                      "id": "upS3g",
                       "name": "lbl3",
-                      "fill": "#78716C",
+                      "fill": "#1C1917",
                       "content": "Analysis",
                       "fontFamily": "Inter",
                       "fontSize": 14,
-                      "fontWeight": "normal"
+                      "fontWeight": "600"
                     }
                   ]
                 }
@@ -1494,12 +1461,189 @@
               "type": "frame",
               "id": "zpEUK",
               "name": "main",
-              "width": "fill_container",
+              "width": 1190,
               "height": "fill_container",
               "layout": "vertical",
-              "gap": 20,
+              "gap": 24,
               "padding": 32,
               "children": [
+                {
+                  "type": "frame",
+                  "id": "sIQLA",
+                  "name": "flowStepper",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "PnAnC",
+                      "name": "stepRow",
+                      "width": "fill_container",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "qCBlb",
+                          "name": "st1",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "H4lMQ",
+                              "name": "r1",
+                              "width": 24,
+                              "height": 24,
+                              "fill": "#FFFFFF",
+                              "cornerRadius": 12,
+                              "stroke": {
+                                "thickness": 2,
+                                "fill": "$accent"
+                              },
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "ellipse",
+                                  "id": "yn9K0",
+                                  "name": "dot1",
+                                  "fill": "$accent",
+                                  "width": 8,
+                                  "height": 8
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "xlNc0",
+                              "name": "t1",
+                              "fill": "$accent",
+                              "content": "Paste JD",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "kzrIB",
+                          "name": "l1",
+                          "width": "fill_container",
+                          "height": 2,
+                          "fill": "$border-default"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "nd8GA",
+                          "name": "st2",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "Y118b",
+                              "name": "b2",
+                              "width": 22,
+                              "height": 22,
+                              "fill": "#E7E5E4",
+                              "cornerRadius": 11,
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "jBipC",
+                                  "name": "n2",
+                                  "fill": "$text-secondary",
+                                  "content": "2",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "mUDyW",
+                              "name": "t2",
+                              "fill": "$text-muted",
+                              "content": "Analysis",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "xEJUA",
+                          "name": "l2",
+                          "width": "fill_container",
+                          "height": 2,
+                          "fill": "$border-default"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "2f8fo",
+                          "name": "st4",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "6UYaI",
+                              "name": "b4",
+                              "width": 22,
+                              "height": 22,
+                              "fill": "#E7E5E4",
+                              "cornerRadius": 11,
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "V7QP9",
+                                  "name": "n4",
+                                  "fill": "$text-secondary",
+                                  "content": "3",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "6ALTr",
+                              "name": "t4",
+                              "fill": "$text-muted",
+                              "content": "Resume",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "TMWQy",
+                      "name": "flowHint",
+                      "fill": "$text-muted",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Step 1 of 3 · Paste JD — pan right for 02b (analysis) and 02c (results + next step).",
+                      "lineHeight": 1.45,
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
                 {
                   "type": "frame",
                   "id": "hdKGg",
@@ -1511,7 +1655,10 @@
                     {
                       "type": "text",
                       "id": "T3lVw",
+                      "x": 0,
+                      "y": 0,
                       "name": "s2",
+                      "enabled": false,
                       "fill": "$accent",
                       "content": "Step 2 of 3 · Job posting",
                       "fontFamily": "Inter",
@@ -1535,7 +1682,7 @@
                       "fill": "$text-secondary",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "Paste the posting text. Nothing is uploaded without your consent.",
+                      "content": "Paste the job description. Later steps replace this panel: analyzing → results → resume table.",
                       "lineHeight": 1.4,
                       "fontFamily": "Inter",
                       "fontSize": 13,
@@ -1628,7 +1775,7 @@
                       "id": "1V1WR",
                       "name": "stepTag",
                       "fill": "$accent",
-                      "content": "Step 2 of 3 · Job posting",
+                      "content": "Next step",
                       "fontFamily": "Inter",
                       "fontSize": 12,
                       "fontWeight": "600"
@@ -1640,7 +1787,7 @@
                       "fill": "$text-secondary",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "After you paste the posting, go to Analysis to run the match against your current resume.",
+                      "content": "Continue starts analysis. You won’t see loading, results, and resume actions on the same screen.",
                       "lineHeight": 1.45,
                       "fontFamily": "Inter",
                       "fontSize": 13,
@@ -1694,7 +1841,7 @@
                           "fill": "$text-muted",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
-                          "content": "Or open the Analysis tab in the sidebar.",
+                          "content": "Or jump to Analysis in the sidebar.",
                           "fontFamily": "Inter",
                           "fontSize": 12,
                           "fontWeight": "normal"
@@ -1702,380 +1849,64 @@
                       ]
                     }
                   ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "frame",
-      "id": "5oBdz",
-      "x": 2976,
-      "y": -10,
-      "name": "03 Analysis — results",
-      "width": 1440,
-      "height": 900,
-      "fill": "$bg-canvas",
-      "layout": "vertical",
-      "children": [
-        {
-          "type": "frame",
-          "id": "MqbYK",
-          "name": "tb",
-          "width": "fill_container",
-          "fill": "#FFFFFF",
-          "stroke": {
-            "thickness": {
-              "bottom": 1
-            },
-            "fill": "#E7E5E4"
-          },
-          "padding": [
-            18,
-            28
-          ],
-          "justifyContent": "space_between",
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "frame",
-              "id": "R2BYD",
-              "name": "brandRow",
-              "gap": 14,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "text",
-                  "id": "EazK9",
-                  "fill": "$accent",
-                  "content": "← My resumes",
-                  "fontFamily": "Inter",
-                  "fontSize": 13,
-                  "fontWeight": "600"
-                },
-                {
-                  "type": "text",
-                  "id": "JqSVk",
-                  "fill": "$text-primary",
-                  "content": "Job Application Assistant",
-                  "fontFamily": "Inter",
-                  "fontSize": 18,
-                  "fontWeight": "600"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "p4fxH",
-              "name": "actions",
-              "gap": 16,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "text",
-                  "id": "huqa0",
-                  "name": "hint",
-                  "fill": "$text-muted",
-                  "textGrowth": "fixed-width",
-                  "width": 220,
-                  "content": "Data stays in your browser",
-                  "lineHeight": 1.4,
-                  "fontFamily": "Inter",
-                  "fontSize": 12,
-                  "fontWeight": "normal"
                 },
                 {
                   "type": "frame",
-                  "id": "xaKL3",
-                  "name": "expBtn",
-                  "cornerRadius": 8,
+                  "id": "GXLc3",
+                  "x": 32,
+                  "y": 678,
+                  "name": "loadingCard",
+                  "enabled": false,
+                  "width": "fill_container(1124)",
+                  "fill": "$surface",
+                  "cornerRadius": 10,
                   "stroke": {
                     "thickness": 1,
                     "fill": "$border-default"
                   },
-                  "gap": 6,
-                  "padding": [
-                    8,
-                    14
-                  ],
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "icon_font",
-                      "id": "AGkOc",
-                      "name": "expIcon",
-                      "width": 16,
-                      "height": 16,
-                      "iconFontName": "download",
-                      "iconFontFamily": "lucide",
-                      "fill": "$text-secondary"
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#0000000A",
+                    "offset": {
+                      "x": 0,
+                      "y": 1
                     },
-                    {
-                      "type": "text",
-                      "id": "mbc7B",
-                      "name": "expLbl",
-                      "fill": "$text-secondary",
-                      "content": "Export",
-                      "fontFamily": "Inter",
-                      "fontSize": 13,
-                      "fontWeight": "normal"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "frame",
-          "id": "nlkiX",
-          "name": "body",
-          "width": "fill_container",
-          "height": "fill_container",
-          "children": [
-            {
-              "type": "frame",
-              "id": "dnukZ",
-              "name": "side",
-              "theme": {
-                "sidebar": "expanded"
-              },
-              "clip": true,
-              "width": 252,
-              "height": "fill_container",
-              "fill": "#FAFAF9",
-              "stroke": {
-                "thickness": {
-                  "right": 1
-                },
-                "fill": "#E7E5E4"
-              },
-              "layout": "vertical",
-              "gap": 4,
-              "padding": [
-                16,
-                "$sidebar-pad-x"
-              ],
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "VBljf",
-                  "name": "toggleC",
-                  "width": "fill_container",
-                  "padding": [
-                    0,
-                    0,
-                    12,
-                    0
-                  ],
-                  "justifyContent": "space_between",
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "frame",
-                      "id": "FgMz1",
-                      "name": "sideLogo",
-                      "fill": "$accent-subtle",
-                      "cornerRadius": 8,
-                      "padding": 8,
-                      "justifyContent": "center",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "icon_font",
-                          "id": "1ZQIS",
-                          "name": "lgC",
-                          "width": 18,
-                          "height": 18,
-                          "iconFontName": "file-text",
-                          "iconFontFamily": "lucide",
-                          "fill": "$accent"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "NN67F",
-                      "name": "btnC",
-                      "fill": "#FAFAF9",
-                      "cornerRadius": 8,
-                      "stroke": {
-                        "thickness": 0
-                      },
-                      "padding": 8,
-                      "justifyContent": "center",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "icon_font",
-                          "id": "0180K",
-                          "name": "icoC",
-                          "width": 18,
-                          "height": 18,
-                          "iconFontName": "panel-left",
-                          "iconFontFamily": "lucide",
-                          "fill": "$text-secondary"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "NQ90u",
-                  "name": "nav1",
-                  "fill": "#FAFAF9",
-                  "cornerRadius": 10,
-                  "gap": 10,
-                  "padding": [
-                    10,
-                    12
-                  ],
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "icon_font",
-                      "id": "Bg1lv",
-                      "name": "ico1",
-                      "width": 18,
-                      "height": 18,
-                      "iconFontName": "file-text",
-                      "iconFontFamily": "lucide",
-                      "fill": "#78716C"
-                    },
-                    {
-                      "type": "text",
-                      "id": "sf0jT",
-                      "name": "lbl1",
-                      "fill": "#78716C",
-                      "content": "Resume",
-                      "fontFamily": "Inter",
-                      "fontSize": 14,
-                      "fontWeight": "normal"
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "COxr6",
-                  "name": "nav2",
-                  "fill": "#FAFAF9",
-                  "cornerRadius": 10,
-                  "gap": 10,
-                  "padding": [
-                    10,
-                    12
-                  ],
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "icon_font",
-                      "id": "0e9to",
-                      "name": "ico2",
-                      "width": 18,
-                      "height": 18,
-                      "iconFontName": "clipboard-list",
-                      "iconFontFamily": "lucide",
-                      "fill": "#78716C"
-                    },
-                    {
-                      "type": "text",
-                      "id": "BQse9",
-                      "name": "lbl2",
-                      "fill": "#78716C",
-                      "content": "Job description",
-                      "fontFamily": "Inter",
-                      "fontSize": 14,
-                      "fontWeight": "normal"
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "gKaCq",
-                  "name": "nav3",
-                  "fill": "#FFFBEB",
-                  "cornerRadius": 10,
-                  "gap": 10,
-                  "padding": [
-                    10,
-                    14
-                  ],
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "icon_font",
-                      "id": "j3brv",
-                      "name": "ico3",
-                      "width": 18,
-                      "height": 18,
-                      "iconFontName": "scan-search",
-                      "iconFontFamily": "lucide",
-                      "fill": "#D97706"
-                    },
-                    {
-                      "type": "text",
-                      "id": "8VpDD",
-                      "name": "lbl3",
-                      "fill": "#1C1917",
-                      "content": "Analysis",
-                      "fontFamily": "Inter",
-                      "fontSize": 14,
-                      "fontWeight": "600"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "aSDP8",
-              "name": "main",
-              "width": "fill_container",
-              "height": "fill_container",
-              "layout": "vertical",
-              "gap": 20,
-              "padding": 32,
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "TX2YC",
-                  "name": "hdr",
-                  "width": 617,
+                    "blur": 3
+                  },
                   "layout": "vertical",
-                  "gap": 4,
+                  "gap": 20,
+                  "padding": 48,
+                  "justifyContent": "center",
+                  "alignItems": "center",
                   "children": [
                     {
-                      "type": "text",
-                      "id": "Xp6Mp",
-                      "name": "s3",
-                      "fill": "$accent",
-                      "content": "Step 3 of 3 · Analysis",
-                      "fontFamily": "Inter",
-                      "fontSize": 12,
-                      "fontWeight": "600"
+                      "type": "icon_font",
+                      "id": "htROm",
+                      "width": 32,
+                      "height": 32,
+                      "iconFontName": "refresh-cw",
+                      "iconFontFamily": "lucide",
+                      "fill": "$accent"
                     },
                     {
                       "type": "text",
-                      "id": "uaxeS",
-                      "name": "hTitle",
+                      "id": "avcjt",
                       "fill": "$text-primary",
-                      "content": "Analysis",
+                      "content": "Analyzing fit, gaps, and JD traceability…",
                       "fontFamily": "Inter",
-                      "fontSize": 22,
-                      "fontWeight": "600"
+                      "fontSize": 15,
+                      "fontWeight": "500"
                     },
                     {
                       "type": "text",
-                      "id": "TqcfF",
-                      "name": "hSub",
-                      "fill": "$text-secondary",
+                      "id": "vi2x5",
+                      "fill": "$text-muted",
                       "textGrowth": "fixed-width",
-                      "width": "fill_container",
-                      "content": "Fit, gaps, and traceability to JD lines. Not a hiring prediction.",
-                      "lineHeight": 1.4,
+                      "width": 420,
+                      "content": "You can leave this tab open. Results will appear here when ready.",
+                      "lineHeight": 1.45,
+                      "textAlign": "center",
                       "fontFamily": "Inter",
                       "fontSize": 13,
                       "fontWeight": "normal"
@@ -2085,9 +1916,12 @@
                 {
                   "type": "frame",
                   "id": "q5vYP",
+                  "x": 32,
+                  "y": 792.5,
                   "name": "card",
-                  "width": "fill_container",
-                  "height": "fill_container",
+                  "enabled": false,
+                  "width": "fill_container(1124)",
+                  "height": "fill_container(477.5)",
                   "fill": "$surface",
                   "cornerRadius": 10,
                   "stroke": {
@@ -2368,8 +2202,11 @@
                 {
                   "type": "frame",
                   "id": "IP7z6",
+                  "x": 32,
+                  "y": 1294,
                   "name": "postAnalysisCta",
-                  "width": "fill_container",
+                  "enabled": false,
+                  "width": "fill_container(1124)",
                   "layout": "vertical",
                   "gap": 14,
                   "children": [
@@ -2388,7 +2225,7 @@
                       "fill": "$text-secondary",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "Next we’ll draft line-level edits on your Resume. Open Resume to review and accept or reject each AI suggestion.",
+                      "content": "Open My resumes, pick a file from the table, then apply AI suggestions in the resume editor.",
                       "lineHeight": 1.45,
                       "fontFamily": "Inter",
                       "fontSize": 13,
@@ -2428,7 +2265,7 @@
                               "type": "text",
                               "id": "ivml0",
                               "fill": "#FFFFFF",
-                              "content": "Apply AI suggestions in Resume",
+                              "content": "Go to My resumes",
                               "fontFamily": "Inter",
                               "fontSize": 14,
                               "fontWeight": "600"
@@ -2441,7 +2278,7 @@
                           "fill": "$text-muted",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
-                          "content": "Same as choosing the Resume tab — edits appear as inline suggestions.",
+                          "content": "Use ← My resumes in the header or the Resume sidebar item.",
                           "fontFamily": "Inter",
                           "fontSize": 12,
                           "fontWeight": "normal"
@@ -2661,389 +2498,6 @@
                       "name": "retryLbl",
                       "fill": "$text-secondary",
                       "content": "Retry",
-                      "fontFamily": "Inter",
-                      "fontSize": 13,
-                      "fontWeight": "normal"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "frame",
-      "id": "VaY1E",
-      "x": 4464,
-      "y": 0,
-      "name": "04 Analysis — running",
-      "width": 1440,
-      "height": 900,
-      "fill": "$bg-canvas",
-      "layout": "vertical",
-      "children": [
-        {
-          "type": "frame",
-          "id": "4lMwg",
-          "name": "tb",
-          "width": "fill_container",
-          "fill": "#FFFFFF",
-          "stroke": {
-            "thickness": {
-              "bottom": 1
-            },
-            "fill": "#E7E5E4"
-          },
-          "padding": [
-            18,
-            28
-          ],
-          "justifyContent": "space_between",
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "frame",
-              "id": "hR4A3",
-              "name": "brandRow",
-              "gap": 14,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "text",
-                  "id": "FNTNu",
-                  "fill": "$accent",
-                  "content": "← My resumes",
-                  "fontFamily": "Inter",
-                  "fontSize": 13,
-                  "fontWeight": "600"
-                },
-                {
-                  "type": "text",
-                  "id": "xKFlO",
-                  "fill": "$text-primary",
-                  "content": "Job Application Assistant",
-                  "fontFamily": "Inter",
-                  "fontSize": 18,
-                  "fontWeight": "600"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "hSHOT",
-              "name": "rc",
-              "gap": 14,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "text",
-                  "id": "KRmt5",
-                  "fill": "$text-muted",
-                  "content": "Data stays in your browser",
-                  "fontFamily": "Inter",
-                  "fontSize": 12,
-                  "fontWeight": "normal"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "frame",
-          "id": "H6irh",
-          "name": "body",
-          "width": "fill_container",
-          "height": "fill_container",
-          "children": [
-            {
-              "type": "frame",
-              "id": "4KUj0",
-              "name": "side",
-              "theme": {
-                "sidebar": "expanded"
-              },
-              "clip": true,
-              "width": 252,
-              "height": "fill_container",
-              "fill": "#FAFAF9",
-              "stroke": {
-                "thickness": {
-                  "right": 1
-                },
-                "fill": "#E7E5E4"
-              },
-              "layout": "vertical",
-              "gap": 4,
-              "padding": [
-                16,
-                "$sidebar-pad-x"
-              ],
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "zXkKe",
-                  "name": "toggleD",
-                  "width": "fill_container",
-                  "padding": [
-                    0,
-                    0,
-                    12,
-                    0
-                  ],
-                  "justifyContent": "space_between",
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "frame",
-                      "id": "Akapx",
-                      "name": "sideLogo",
-                      "fill": "$accent-subtle",
-                      "cornerRadius": 8,
-                      "padding": 8,
-                      "justifyContent": "center",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "icon_font",
-                          "id": "2DBw1",
-                          "name": "lgD",
-                          "width": 18,
-                          "height": 18,
-                          "iconFontName": "file-text",
-                          "iconFontFamily": "lucide",
-                          "fill": "$accent"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "c8Hch",
-                      "name": "btnD",
-                      "fill": "#FAFAF9",
-                      "cornerRadius": 8,
-                      "stroke": {
-                        "thickness": 0
-                      },
-                      "padding": 8,
-                      "justifyContent": "center",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "icon_font",
-                          "id": "2RoFe",
-                          "name": "icoD",
-                          "width": 18,
-                          "height": 18,
-                          "iconFontName": "panel-left",
-                          "iconFontFamily": "lucide",
-                          "fill": "$text-secondary"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "kLn8S",
-                  "name": "n1",
-                  "fill": "#FAFAF9",
-                  "cornerRadius": 10,
-                  "gap": 10,
-                  "padding": [
-                    10,
-                    12
-                  ],
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "icon_font",
-                      "id": "fjaMp",
-                      "name": "n1Ico",
-                      "width": 18,
-                      "height": 18,
-                      "iconFontName": "file-text",
-                      "iconFontFamily": "lucide",
-                      "fill": "#78716C"
-                    },
-                    {
-                      "type": "text",
-                      "id": "I0KBU",
-                      "fill": "#78716C",
-                      "content": "Resume",
-                      "fontFamily": "Inter",
-                      "fontSize": 14,
-                      "fontWeight": "normal"
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "FDgqS",
-                  "name": "n2",
-                  "fill": "#FAFAF9",
-                  "cornerRadius": 10,
-                  "gap": 10,
-                  "padding": [
-                    10,
-                    12
-                  ],
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "icon_font",
-                      "id": "ggm6Z",
-                      "name": "n2Ico",
-                      "width": 18,
-                      "height": 18,
-                      "iconFontName": "clipboard-list",
-                      "iconFontFamily": "lucide",
-                      "fill": "#78716C"
-                    },
-                    {
-                      "type": "text",
-                      "id": "lqpje",
-                      "fill": "#78716C",
-                      "content": "Job description",
-                      "fontFamily": "Inter",
-                      "fontSize": 14,
-                      "fontWeight": "normal"
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "pSIJG",
-                  "name": "n3",
-                  "fill": "#FFFBEB",
-                  "cornerRadius": 10,
-                  "gap": 10,
-                  "padding": [
-                    10,
-                    14
-                  ],
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "icon_font",
-                      "id": "6nG79",
-                      "name": "n3Ico",
-                      "width": 18,
-                      "height": 18,
-                      "iconFontName": "scan-search",
-                      "iconFontFamily": "lucide",
-                      "fill": "#D97706"
-                    },
-                    {
-                      "type": "text",
-                      "id": "tpWYX",
-                      "fill": "#1C1917",
-                      "content": "Analysis",
-                      "fontFamily": "Inter",
-                      "fontSize": 14,
-                      "fontWeight": "600"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "HgYEa",
-              "name": "main",
-              "width": "fill_container",
-              "height": "fill_container",
-              "layout": "vertical",
-              "gap": 20,
-              "padding": 32,
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "KyHQA",
-                  "name": "hdrR",
-                  "width": "fill_container",
-                  "layout": "vertical",
-                  "gap": 4,
-                  "children": [
-                    {
-                      "type": "text",
-                      "id": "J2C4t",
-                      "fill": "$text-primary",
-                      "content": "Analysis",
-                      "fontFamily": "Inter",
-                      "fontSize": 22,
-                      "fontWeight": "600"
-                    },
-                    {
-                      "type": "text",
-                      "id": "Gxn8U",
-                      "fill": "$text-secondary",
-                      "textGrowth": "fixed-width",
-                      "width": "fill_container",
-                      "content": "Comparing your resume to this posting. This usually takes a few seconds.",
-                      "lineHeight": 1.4,
-                      "fontFamily": "Inter",
-                      "fontSize": 13,
-                      "fontWeight": "normal"
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "GXLc3",
-                  "name": "loadingCard",
-                  "width": "fill_container",
-                  "height": "fill_container",
-                  "fill": "$surface",
-                  "cornerRadius": 10,
-                  "stroke": {
-                    "thickness": 1,
-                    "fill": "$border-default"
-                  },
-                  "effect": {
-                    "type": "shadow",
-                    "shadowType": "outer",
-                    "color": "#0000000A",
-                    "offset": {
-                      "x": 0,
-                      "y": 1
-                    },
-                    "blur": 3
-                  },
-                  "layout": "vertical",
-                  "gap": 20,
-                  "padding": 48,
-                  "justifyContent": "center",
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "icon_font",
-                      "id": "htROm",
-                      "width": 32,
-                      "height": 32,
-                      "iconFontName": "refresh-cw",
-                      "iconFontFamily": "lucide",
-                      "fill": "$accent"
-                    },
-                    {
-                      "type": "text",
-                      "id": "avcjt",
-                      "fill": "$text-primary",
-                      "content": "Analyzing fit, gaps, and JD traceability…",
-                      "fontFamily": "Inter",
-                      "fontSize": 15,
-                      "fontWeight": "500"
-                    },
-                    {
-                      "type": "text",
-                      "id": "vi2x5",
-                      "fill": "$text-muted",
-                      "textGrowth": "fixed-width",
-                      "width": 420,
-                      "content": "You can leave this tab open. Results will appear here when ready.",
-                      "lineHeight": 1.45,
-                      "textAlign": "center",
                       "fontFamily": "Inter",
                       "fontSize": 13,
                       "fontWeight": "normal"
@@ -4685,6 +4139,2384 @@
               "fontFamily": "Inter",
               "fontSize": 12,
               "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "fCbU8",
+      "x": -1488,
+      "y": 1406,
+      "name": "06 Dialog — delete confirm",
+      "width": 640,
+      "height": 440,
+      "fill": "#29252466",
+      "layout": "vertical",
+      "justifyContent": "center",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "3EmcA",
+          "name": "dialog",
+          "width": 400,
+          "fill": "$surface",
+          "cornerRadius": 16,
+          "stroke": {
+            "thickness": 1,
+            "fill": "$border-default"
+          },
+          "layout": "vertical",
+          "gap": 16,
+          "padding": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "hHrg4",
+              "name": "dialogHeader",
+              "width": "fill_container",
+              "gap": 12,
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "BnCGy",
+                  "fill": "$text-primary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Delete this resume?",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "IXAiE",
+                  "name": "close",
+                  "width": 36,
+                  "height": 36,
+                  "cornerRadius": 8,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "$border-default"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "vGdfk",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "x",
+                      "iconFontFamily": "lucide",
+                      "fill": "$text-secondary"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "kfW5M",
+              "fill": "$text-secondary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "“full-stack-developer.md” will be removed from this browser. You can’t undo this action.",
+              "lineHeight": 1.45,
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "SYHgX",
+              "name": "actions",
+              "width": "fill_container",
+              "gap": 10,
+              "justifyContent": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "kaENz",
+                  "name": "delete",
+                  "fill": "#DC2626",
+                  "cornerRadius": 8,
+                  "gap": 8,
+                  "padding": [
+                    10,
+                    16
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "QjFCL",
+                      "fill": "#FFFFFF",
+                      "content": "Delete",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "LSpWS",
+      "x": 2992,
+      "y": -10,
+      "name": "02b · Phase 2 Analyzing",
+      "width": 1440,
+      "height": 960,
+      "fill": "$bg-canvas",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "dQNr6",
+          "name": "tb",
+          "width": "fill_container",
+          "fill": "#FFFFFF",
+          "stroke": {
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "#E7E5E4"
+          },
+          "padding": [
+            18,
+            28
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "U2SF7",
+              "name": "brandRow",
+              "gap": 14,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "sRUrZ",
+                  "fill": "$accent",
+                  "content": "← My resumes",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "KQg4Y",
+                  "fill": "$text-primary",
+                  "content": "Job Application Assistant",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "4Rtjj",
+              "name": "actions",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "KCFWM",
+                  "name": "hint",
+                  "fill": "$text-muted",
+                  "textGrowth": "fixed-width",
+                  "width": 220,
+                  "content": "Data stays in your browser",
+                  "lineHeight": 1.4,
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "4Gi85",
+                  "name": "expBtn",
+                  "cornerRadius": 8,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "$border-default"
+                  },
+                  "gap": 6,
+                  "padding": [
+                    8,
+                    14
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "BF9Rx",
+                      "name": "expIcon",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "download",
+                      "iconFontFamily": "lucide",
+                      "fill": "$text-secondary"
+                    },
+                    {
+                      "type": "text",
+                      "id": "wCmju",
+                      "name": "expLbl",
+                      "fill": "$text-secondary",
+                      "content": "Export",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "GSbJt",
+          "name": "body",
+          "width": "fill_container",
+          "height": 891,
+          "children": [
+            {
+              "type": "frame",
+              "id": "tvLDK",
+              "name": "side",
+              "theme": {
+                "sidebar": "expanded"
+              },
+              "clip": true,
+              "width": 252,
+              "height": "fill_container",
+              "fill": "#FAFAF9",
+              "stroke": {
+                "thickness": {
+                  "right": 1
+                },
+                "fill": "#E7E5E4"
+              },
+              "layout": "vertical",
+              "gap": 4,
+              "padding": [
+                16,
+                "$sidebar-pad-x"
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "b1SL3",
+                  "name": "toggleB",
+                  "width": "fill_container",
+                  "padding": [
+                    0,
+                    0,
+                    12,
+                    0
+                  ],
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "PXEmF",
+                      "name": "sideLogo",
+                      "fill": "$accent-subtle",
+                      "cornerRadius": 8,
+                      "padding": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "rGioD",
+                          "name": "lgB",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "file-text",
+                          "iconFontFamily": "lucide",
+                          "fill": "$accent"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "hXV9y",
+                      "name": "btnB",
+                      "fill": "#FAFAF9",
+                      "cornerRadius": 8,
+                      "stroke": {
+                        "thickness": 0
+                      },
+                      "padding": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "qKxTf",
+                          "name": "icoB",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "panel-left",
+                          "iconFontFamily": "lucide",
+                          "fill": "$text-secondary"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "aYrsL",
+                  "name": "nav1",
+                  "fill": "#FAFAF9",
+                  "cornerRadius": 10,
+                  "gap": 10,
+                  "padding": [
+                    10,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "2JAk9",
+                      "name": "ico1",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "file-text",
+                      "iconFontFamily": "lucide",
+                      "fill": "#78716C"
+                    },
+                    {
+                      "type": "text",
+                      "id": "mqCiK",
+                      "name": "lbl1",
+                      "fill": "#78716C",
+                      "content": "Resume",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "3AZUH",
+                  "name": "nav3",
+                  "fill": "#FFFBEB",
+                  "cornerRadius": 10,
+                  "gap": 10,
+                  "padding": [
+                    10,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "S29PI",
+                      "name": "ico3",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "scan-search",
+                      "iconFontFamily": "lucide",
+                      "fill": "#D97706"
+                    },
+                    {
+                      "type": "text",
+                      "id": "5EvKw",
+                      "name": "lbl3",
+                      "fill": "#1C1917",
+                      "content": "Analysis",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "AwUvz",
+              "name": "main",
+              "width": 1190,
+              "height": "fill_container",
+              "layout": "vertical",
+              "gap": 24,
+              "padding": 32,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "4XTuU",
+                  "name": "flowStepper",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "eueq3",
+                      "name": "stepRow",
+                      "width": "fill_container",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "YKWrd",
+                          "name": "st1",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "f7dCr",
+                              "name": "r1",
+                              "width": 24,
+                              "height": 24,
+                              "fill": "$accent",
+                              "cornerRadius": 12,
+                              "stroke": {
+                                "thickness": 0,
+                                "fill": "#00000000"
+                              },
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon_font",
+                                  "id": "MTR0k",
+                                  "name": "chkP2a",
+                                  "width": 14,
+                                  "height": 14,
+                                  "iconFontName": "check",
+                                  "iconFontFamily": "lucide",
+                                  "fill": "#FFFFFF"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "CViEw",
+                              "name": "t1",
+                              "fill": "$text-primary",
+                              "content": "Paste JD",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "YPJW6",
+                          "name": "l1",
+                          "width": "fill_container",
+                          "height": 2,
+                          "fill": "$accent"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "C0i4T",
+                          "name": "st2",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "o1pqA",
+                              "name": "b2",
+                              "width": 22,
+                              "height": 22,
+                              "fill": "#FFFFFF",
+                              "cornerRadius": 11,
+                              "stroke": {
+                                "thickness": 2,
+                                "fill": "$accent"
+                              },
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "ellipse",
+                                  "id": "I6fUS",
+                                  "name": "dotP2b",
+                                  "fill": "$accent",
+                                  "width": 8,
+                                  "height": 8
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "H0i29",
+                              "name": "t2",
+                              "fill": "$accent",
+                              "content": "Analysis",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "q8ZKr",
+                          "name": "l2",
+                          "width": "fill_container",
+                          "height": 2,
+                          "fill": "$border-default"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "mEfEz",
+                          "name": "l3b",
+                          "width": "fill_container",
+                          "height": 2,
+                          "fill": "$border-default"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "5lSeq",
+                          "name": "st3",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "AWfd6",
+                              "name": "bRb",
+                              "width": 22,
+                              "height": 22,
+                              "fill": "#E7E5E4",
+                              "cornerRadius": 11,
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "DiUqk",
+                                  "name": "nRb",
+                                  "fill": "$text-secondary",
+                                  "content": "3",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "e88nR",
+                              "name": "tRb",
+                              "fill": "$text-muted",
+                              "content": "Resume",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "U39TS",
+                      "name": "flowHint",
+                      "fill": "$text-muted",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Step 2 of 3 · Analysis (loading) — JD done; Analysis is active.",
+                      "lineHeight": 1.45,
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "qEnjh",
+                  "x": 32,
+                  "y": 109,
+                  "name": "hdr",
+                  "enabled": false,
+                  "width": 468,
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "5y1Aa",
+                      "x": 0,
+                      "y": 0,
+                      "name": "s2",
+                      "enabled": false,
+                      "fill": "$accent",
+                      "content": "Step 2 of 3 · Job posting",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "zzjmP",
+                      "name": "hTitle",
+                      "fill": "$text-primary",
+                      "content": "Job description",
+                      "fontFamily": "Inter",
+                      "fontSize": 22,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "BevgF",
+                      "name": "hSub",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Paste the job description. Later steps replace this panel: analyzing → results → resume table.",
+                      "lineHeight": 1.4,
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "z2sHw",
+                  "x": 32,
+                  "y": 200,
+                  "name": "card",
+                  "enabled": false,
+                  "width": "fill_container(1126)",
+                  "height": "fill_container(540)",
+                  "fill": "$surface",
+                  "cornerRadius": 10,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "$border-default"
+                  },
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "wWwVs",
+                      "name": "jdlbl",
+                      "fill": "$text-secondary",
+                      "content": "Posting text",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "pDciv",
+                      "name": "ta",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "fill": "#FAFAF9",
+                      "cornerRadius": 10,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$border-default"
+                      },
+                      "layout": "vertical",
+                      "gap": 14,
+                      "padding": 28,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "GFzWs",
+                          "name": "emptyIco",
+                          "width": 28,
+                          "height": 28,
+                          "iconFontName": "clipboard-paste",
+                          "iconFontFamily": "lucide",
+                          "fill": "$text-muted"
+                        },
+                        {
+                          "type": "text",
+                          "id": "uRGb8",
+                          "name": "emptyTxt",
+                          "fill": "$text-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": 360,
+                          "content": "Paste a job description to analyze fit and gaps.",
+                          "lineHeight": 1.45,
+                          "textAlign": "center",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "8dQp5",
+                  "x": 32,
+                  "y": 764,
+                  "name": "jdFlowFooter",
+                  "enabled": false,
+                  "width": "fill_container(1126)",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "BaCil",
+                      "name": "stepTag",
+                      "fill": "$accent",
+                      "content": "Next step",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "qy6cK",
+                      "name": "stepHint",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Continue starts analysis. You won’t see loading, results, and resume actions on the same screen.",
+                      "lineHeight": 1.45,
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Rijmm",
+                      "name": "rowGo",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "IagEn",
+                          "name": "btnContinueAnalysis",
+                          "fill": "$accent",
+                          "cornerRadius": 8,
+                          "gap": 8,
+                          "padding": [
+                            10,
+                            18
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "cv8Ig",
+                              "fill": "#FFFFFF",
+                              "content": "Continue to Analysis",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "icon_font",
+                              "id": "dDTQr",
+                              "width": 18,
+                              "height": 18,
+                              "iconFontName": "arrow-right",
+                              "iconFontFamily": "lucide",
+                              "fill": "#FFFFFF"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "0i1Hq",
+                          "name": "mini",
+                          "fill": "$text-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Or jump to Analysis in the sidebar.",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "EWyjk",
+                  "name": "loadingCard",
+                  "width": "fill_container",
+                  "fill": "$surface",
+                  "cornerRadius": 10,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "$border-default"
+                  },
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#0000000A",
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "blur": 3
+                  },
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": 48,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "R9hyx",
+                      "width": 32,
+                      "height": 32,
+                      "iconFontName": "refresh-cw",
+                      "iconFontFamily": "lucide",
+                      "fill": "$accent"
+                    },
+                    {
+                      "type": "text",
+                      "id": "9Mmd0",
+                      "fill": "$text-primary",
+                      "content": "Analyzing fit, gaps, and JD traceability…",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "qZCya",
+                      "fill": "$text-muted",
+                      "textGrowth": "fixed-width",
+                      "width": 420,
+                      "content": "You can leave this tab open. Results will appear here when ready.",
+                      "lineHeight": 1.45,
+                      "textAlign": "center",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "I4QwQ",
+                  "x": 32,
+                  "y": 792.5,
+                  "name": "card",
+                  "enabled": false,
+                  "width": "fill_container(1124)",
+                  "height": "fill_container(477.5)",
+                  "fill": "$surface",
+                  "cornerRadius": 10,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "$border-default"
+                  },
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "zb5ay",
+                      "name": "fitSec",
+                      "width": "fill_container",
+                      "fill": "$surface",
+                      "cornerRadius": 10,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$border-default"
+                      },
+                      "layout": "vertical",
+                      "gap": 10,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "gJiyA",
+                          "name": "fitTitle",
+                          "fill": "$text-primary",
+                          "content": "Fit summary",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "S1F0y",
+                          "name": "fitBody",
+                          "fill": "$text-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Strong alignment on backend systems and data pipelines. Weaker explicit match on stakeholder communication in the JD.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "pO0qe",
+                      "name": "gapSec",
+                      "width": "fill_container",
+                      "fill": "$surface",
+                      "cornerRadius": 10,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$border-default"
+                      },
+                      "layout": "vertical",
+                      "gap": 10,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Mk7vt",
+                          "name": "gapTitle",
+                          "fill": "$text-primary",
+                          "content": "Gaps to strengthen",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "SaLMZ",
+                          "name": "gapBody",
+                          "fill": "$text-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "• Leadership: JD asks for mentoring; resume only implies informal mentoring.\n• Keywords: add “cross-functional” if true for your work.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "3vMQ0",
+                      "name": "traceSec",
+                      "width": "fill_container",
+                      "fill": "$surface",
+                      "cornerRadius": 10,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$border-default"
+                      },
+                      "layout": "vertical",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "gtlCK",
+                          "name": "traceH",
+                          "width": "fill_container",
+                          "stroke": {
+                            "thickness": {
+                              "bottom": 1
+                            },
+                            "fill": "$border-default"
+                          },
+                          "padding": [
+                            12,
+                            16
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "lKEEk",
+                              "name": "traceHT",
+                              "fill": "$text-primary",
+                              "content": "Traceability",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "1ijan",
+                          "name": "row1",
+                          "width": "fill_container",
+                          "stroke": {
+                            "thickness": {
+                              "bottom": 1
+                            },
+                            "fill": "$border-default"
+                          },
+                          "gap": 16,
+                          "padding": [
+                            12,
+                            16
+                          ],
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "ZO6mD",
+                              "name": "c1",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "I3Phj",
+                                  "name": "c1a",
+                                  "fill": "$text-muted",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "JD: “5+ years backend”",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "ZRTlT",
+                                  "name": "c1b",
+                                  "fill": "$text-secondary",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Resume: Experience section shows 6+ years.",
+                                  "lineHeight": 1.4,
+                                  "fontFamily": "Inter",
+                                  "fontSize": 13,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "uzy3a",
+                              "name": "c2",
+                              "width": 120,
+                              "layout": "vertical",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "uifYp",
+                                  "name": "c2a",
+                                  "fill": "$text-primary",
+                                  "content": "Linked",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "500"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "kYpDt",
+                          "name": "row2",
+                          "width": "fill_container",
+                          "gap": 16,
+                          "padding": [
+                            12,
+                            16
+                          ],
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "6aEO3",
+                              "name": "c3",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "VWX3z",
+                                  "name": "c3a",
+                                  "fill": "$text-muted",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "JD: “stakeholder communication”",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "NZHgf",
+                                  "name": "c3b",
+                                  "fill": "$text-secondary",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Resume: Mentioned briefly; consider a stronger bullet.",
+                                  "lineHeight": 1.4,
+                                  "fontFamily": "Inter",
+                                  "fontSize": 13,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "DMJTf",
+                              "name": "c4",
+                              "width": 120,
+                              "layout": "vertical",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "1vS7t",
+                                  "name": "c4a",
+                                  "fill": "$text-secondary",
+                                  "content": "Partial",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "500"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "0f92p",
+                  "x": 32,
+                  "y": 1294,
+                  "name": "postAnalysisCta",
+                  "enabled": false,
+                  "width": "fill_container(1124)",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "SCyim",
+                      "fill": "$accent",
+                      "content": "Ready to improve your resume?",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "1BZtG",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Open My resumes, pick a file from the table, then apply AI suggestions in the resume editor.",
+                      "lineHeight": 1.45,
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "t28eB",
+                      "name": "ctaRow",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "NSZDO",
+                          "name": "btnApplyResume",
+                          "fill": "$accent",
+                          "cornerRadius": 8,
+                          "gap": 10,
+                          "padding": [
+                            12,
+                            20
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "e1sin",
+                              "width": 20,
+                              "height": 20,
+                              "iconFontName": "file-text",
+                              "iconFontFamily": "lucide",
+                              "fill": "#FFFFFF"
+                            },
+                            {
+                              "type": "text",
+                              "id": "x3ZJu",
+                              "fill": "#FFFFFF",
+                              "content": "Go to My resumes",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "LQ7CS",
+                          "fill": "$text-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Use ← My resumes in the header or the Resume sidebar item.",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "r8EVF",
+      "x": 4496,
+      "y": -10,
+      "name": "02c · Phase 3 Results",
+      "width": 1440,
+      "height": 960,
+      "fill": "$bg-canvas",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "uvX93",
+          "name": "tb",
+          "width": "fill_container",
+          "fill": "#FFFFFF",
+          "stroke": {
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "#E7E5E4"
+          },
+          "padding": [
+            18,
+            28
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "fFjJe",
+              "name": "brandRow",
+              "gap": 14,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "m6whK",
+                  "fill": "$accent",
+                  "content": "← My resumes",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "JjJwq",
+                  "fill": "$text-primary",
+                  "content": "Job Application Assistant",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "dfNKv",
+              "name": "actions",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "QHB9x",
+                  "name": "hint",
+                  "fill": "$text-muted",
+                  "textGrowth": "fixed-width",
+                  "width": 220,
+                  "content": "Data stays in your browser",
+                  "lineHeight": 1.4,
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "HJPE8",
+                  "name": "expBtn",
+                  "cornerRadius": 8,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "$border-default"
+                  },
+                  "gap": 6,
+                  "padding": [
+                    8,
+                    14
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "Ti3xj",
+                      "name": "expIcon",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "download",
+                      "iconFontFamily": "lucide",
+                      "fill": "$text-secondary"
+                    },
+                    {
+                      "type": "text",
+                      "id": "abdue",
+                      "name": "expLbl",
+                      "fill": "$text-secondary",
+                      "content": "Export",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "WzyfJ",
+          "name": "body",
+          "width": "fill_container",
+          "height": "fill_container",
+          "children": [
+            {
+              "type": "frame",
+              "id": "xNKCA",
+              "name": "side",
+              "theme": {
+                "sidebar": "expanded"
+              },
+              "clip": true,
+              "width": 252,
+              "height": "fill_container",
+              "fill": "#FAFAF9",
+              "stroke": {
+                "thickness": {
+                  "right": 1
+                },
+                "fill": "#E7E5E4"
+              },
+              "layout": "vertical",
+              "gap": 4,
+              "padding": [
+                16,
+                "$sidebar-pad-x"
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "CXUVx",
+                  "name": "toggleB",
+                  "width": "fill_container",
+                  "padding": [
+                    0,
+                    0,
+                    12,
+                    0
+                  ],
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "vwTlA",
+                      "name": "sideLogo",
+                      "fill": "$accent-subtle",
+                      "cornerRadius": 8,
+                      "padding": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "ayxBQ",
+                          "name": "lgB",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "file-text",
+                          "iconFontFamily": "lucide",
+                          "fill": "$accent"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Uml0v",
+                      "name": "btnB",
+                      "fill": "#FAFAF9",
+                      "cornerRadius": 8,
+                      "stroke": {
+                        "thickness": 0
+                      },
+                      "padding": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "NiYL1",
+                          "name": "icoB",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "panel-left",
+                          "iconFontFamily": "lucide",
+                          "fill": "$text-secondary"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "kcV6k",
+                  "name": "nav1",
+                  "fill": "#FAFAF9",
+                  "cornerRadius": 10,
+                  "gap": 10,
+                  "padding": [
+                    10,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "bvZLW",
+                      "name": "ico1",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "file-text",
+                      "iconFontFamily": "lucide",
+                      "fill": "#78716C"
+                    },
+                    {
+                      "type": "text",
+                      "id": "jgzoa",
+                      "name": "lbl1",
+                      "fill": "#78716C",
+                      "content": "Resume",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "s8pxt",
+                  "name": "nav3",
+                  "fill": "#FFFBEB",
+                  "cornerRadius": 10,
+                  "gap": 10,
+                  "padding": [
+                    10,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "YHBmn",
+                      "name": "ico3",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "scan-search",
+                      "iconFontFamily": "lucide",
+                      "fill": "#D97706"
+                    },
+                    {
+                      "type": "text",
+                      "id": "wrm03",
+                      "name": "lbl3",
+                      "fill": "#1C1917",
+                      "content": "Analysis",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "IHWMP",
+              "name": "main",
+              "width": 1190,
+              "height": "fill_container",
+              "layout": "vertical",
+              "gap": 24,
+              "padding": 32,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "42PVG",
+                  "name": "flowStepper",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "4ce0n",
+                      "name": "stepRow",
+                      "width": "fill_container",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "KtjZn",
+                          "name": "st1",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "ezPXN",
+                              "name": "r1",
+                              "width": 24,
+                              "height": 24,
+                              "fill": "$accent",
+                              "cornerRadius": 12,
+                              "stroke": {
+                                "thickness": 0,
+                                "fill": "#00000000"
+                              },
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon_font",
+                                  "id": "r3INq",
+                                  "name": "chkP3a",
+                                  "width": 14,
+                                  "height": 14,
+                                  "iconFontName": "check",
+                                  "iconFontFamily": "lucide",
+                                  "fill": "#FFFFFF"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "R1wdk",
+                              "name": "t1",
+                              "fill": "$text-primary",
+                              "content": "Paste JD",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "sqEx6",
+                          "name": "l1",
+                          "width": "fill_container",
+                          "height": 2,
+                          "fill": "$accent"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "9pIAA",
+                          "name": "st2",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "qqs3U",
+                              "name": "b2",
+                              "width": 22,
+                              "height": 22,
+                              "fill": "#FFFFFF",
+                              "cornerRadius": 11,
+                              "stroke": {
+                                "thickness": 2,
+                                "fill": "$accent"
+                              },
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "ellipse",
+                                  "id": "X0EQ5",
+                                  "name": "dotS2",
+                                  "fill": "$accent",
+                                  "width": 8,
+                                  "height": 8
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "TTMsD",
+                              "name": "t2",
+                              "fill": "$accent",
+                              "content": "Analysis",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "sv1CQ",
+                          "name": "l2",
+                          "width": "fill_container",
+                          "height": 2,
+                          "fill": "$border-default"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "ie0Or",
+                          "name": "st3",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "JbKf4",
+                              "name": "b3",
+                              "width": 22,
+                              "height": 22,
+                              "fill": "#E7E5E4",
+                              "cornerRadius": 11,
+                              "stroke": {
+                                "thickness": 0,
+                                "fill": "#00000000"
+                              },
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "z5MQR",
+                                  "name": "nRes",
+                                  "fill": "$text-secondary",
+                                  "content": "3",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "oRQAz",
+                              "name": "t3",
+                              "fill": "$text-muted",
+                              "content": "Resume",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "ASTEm",
+                      "name": "flowHint",
+                      "fill": "$text-muted",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Step 2 of 3 · Analysis (results) — Continue below to open My resumes (step 3).",
+                      "lineHeight": 1.45,
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "aJstQ",
+                      "name": "traceSec",
+                      "width": "fill_container",
+                      "fill": "$surface",
+                      "cornerRadius": 10,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$border-default"
+                      },
+                      "layout": "vertical",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "M02Lq",
+                          "name": "traceH",
+                          "width": "fill_container",
+                          "stroke": {
+                            "thickness": {
+                              "bottom": 1
+                            },
+                            "fill": "$border-default"
+                          },
+                          "padding": [
+                            12,
+                            16
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "ZiiU6",
+                              "name": "traceHT",
+                              "fill": "$text-primary",
+                              "content": "Traceability",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Qk4hf",
+                          "name": "row1",
+                          "width": "fill_container",
+                          "stroke": {
+                            "thickness": {
+                              "bottom": 1
+                            },
+                            "fill": "$border-default"
+                          },
+                          "gap": 16,
+                          "padding": [
+                            12,
+                            16
+                          ],
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "EqF7h",
+                              "name": "c1",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "KxRO9",
+                                  "name": "c1a",
+                                  "fill": "$text-muted",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "JD: “5+ years backend”",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "J6OZt",
+                                  "name": "c1b",
+                                  "fill": "$text-secondary",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Resume: Experience section shows 6+ years.",
+                                  "lineHeight": 1.4,
+                                  "fontFamily": "Inter",
+                                  "fontSize": 13,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "evCvF",
+                              "name": "c2",
+                              "width": 120,
+                              "layout": "vertical",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "kuNGl",
+                                  "name": "c2a",
+                                  "fill": "$text-primary",
+                                  "content": "Linked",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "500"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "mqWZT",
+                          "name": "row2",
+                          "width": "fill_container",
+                          "gap": 16,
+                          "padding": [
+                            12,
+                            16
+                          ],
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "mtCeh",
+                              "name": "c3",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "FWmbY",
+                                  "name": "c3a",
+                                  "fill": "$text-muted",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "JD: “stakeholder communication”",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "Dd2G3",
+                                  "name": "c3b",
+                                  "fill": "$text-secondary",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Resume: Mentioned briefly; consider a stronger bullet.",
+                                  "lineHeight": 1.4,
+                                  "fontFamily": "Inter",
+                                  "fontSize": 13,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "wUkQA",
+                              "name": "c4",
+                              "width": 120,
+                              "layout": "vertical",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "Fq9wM",
+                                  "name": "c4a",
+                                  "fill": "$text-secondary",
+                                  "content": "Partial",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "500"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "lCU8m",
+                      "name": "gapSec",
+                      "width": "fill_container",
+                      "fill": "$surface",
+                      "cornerRadius": 10,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$border-default"
+                      },
+                      "layout": "vertical",
+                      "gap": 10,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "BqeOn",
+                          "name": "gapTitle",
+                          "fill": "$text-primary",
+                          "content": "Gaps to strengthen",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "eIVDA",
+                          "name": "gapBody",
+                          "fill": "$text-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "• Leadership: JD asks for mentoring; resume only implies informal mentoring.\n• Keywords: add “cross-functional” if true for your work.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "p0QB6",
+                      "name": "fitSec",
+                      "width": "fill_container",
+                      "fill": "$surface",
+                      "cornerRadius": 10,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$border-default"
+                      },
+                      "layout": "vertical",
+                      "gap": 10,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "hwCSK",
+                          "name": "fitTitle",
+                          "fill": "$text-primary",
+                          "content": "Fit summary",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "DjI4m",
+                          "name": "fitBody",
+                          "fill": "$text-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Strong alignment on backend systems and data pipelines. Weaker explicit match on stakeholder communication in the JD.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "6n2j5",
+                  "x": 32,
+                  "y": 109,
+                  "name": "hdr",
+                  "enabled": false,
+                  "width": 468,
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "dA8yx",
+                      "x": 0,
+                      "y": 0,
+                      "name": "s2",
+                      "enabled": false,
+                      "fill": "$accent",
+                      "content": "Step 2 of 3 · Job posting",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "aeItE",
+                      "name": "hTitle",
+                      "fill": "$text-primary",
+                      "content": "Job description",
+                      "fontFamily": "Inter",
+                      "fontSize": 22,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "tsJQO",
+                      "name": "hSub",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Paste the job description. Later steps replace this panel: analyzing → results → resume table.",
+                      "lineHeight": 1.4,
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "BWxri",
+                  "x": 32,
+                  "y": 200,
+                  "name": "card",
+                  "enabled": false,
+                  "width": "fill_container(1126)",
+                  "height": "fill_container(540)",
+                  "fill": "$surface",
+                  "cornerRadius": 10,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "$border-default"
+                  },
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "cNaTY",
+                      "name": "jdlbl",
+                      "fill": "$text-secondary",
+                      "content": "Posting text",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "JHYYh",
+                      "name": "ta",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "fill": "#FAFAF9",
+                      "cornerRadius": 10,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$border-default"
+                      },
+                      "layout": "vertical",
+                      "gap": 14,
+                      "padding": 28,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "wqdDy",
+                          "name": "emptyIco",
+                          "width": 28,
+                          "height": 28,
+                          "iconFontName": "clipboard-paste",
+                          "iconFontFamily": "lucide",
+                          "fill": "$text-muted"
+                        },
+                        {
+                          "type": "text",
+                          "id": "TIRbq",
+                          "name": "emptyTxt",
+                          "fill": "$text-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": 360,
+                          "content": "Paste a job description to analyze fit and gaps.",
+                          "lineHeight": 1.45,
+                          "textAlign": "center",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "eLWUH",
+                  "x": 32,
+                  "y": 764,
+                  "name": "jdFlowFooter",
+                  "enabled": false,
+                  "width": "fill_container(1126)",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "CJ1QU",
+                      "name": "stepTag",
+                      "fill": "$accent",
+                      "content": "Next step",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ziXHG",
+                      "name": "stepHint",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Continue starts analysis. You won’t see loading, results, and resume actions on the same screen.",
+                      "lineHeight": 1.45,
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "5T0VH",
+                      "name": "rowGo",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "xOE0d",
+                          "name": "btnContinueAnalysis",
+                          "fill": "$accent",
+                          "cornerRadius": 8,
+                          "gap": 8,
+                          "padding": [
+                            10,
+                            18
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "X6BAd",
+                              "fill": "#FFFFFF",
+                              "content": "Continue to Analysis",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "icon_font",
+                              "id": "aHJKV",
+                              "width": 18,
+                              "height": 18,
+                              "iconFontName": "arrow-right",
+                              "iconFontFamily": "lucide",
+                              "fill": "#FFFFFF"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "1FIrc",
+                          "name": "mini",
+                          "fill": "$text-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Or jump to Analysis in the sidebar.",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "rrac1",
+                  "x": 32,
+                  "y": 678,
+                  "name": "loadingCard",
+                  "enabled": false,
+                  "width": "fill_container(1124)",
+                  "fill": "$surface",
+                  "cornerRadius": 10,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "$border-default"
+                  },
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#0000000A",
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "blur": 3
+                  },
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": 48,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "cAxSL",
+                      "width": 32,
+                      "height": 32,
+                      "iconFontName": "refresh-cw",
+                      "iconFontFamily": "lucide",
+                      "fill": "$accent"
+                    },
+                    {
+                      "type": "text",
+                      "id": "eOSWw",
+                      "fill": "$text-primary",
+                      "content": "Analyzing fit, gaps, and JD traceability…",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "dq3Ua",
+                      "fill": "$text-muted",
+                      "textGrowth": "fixed-width",
+                      "width": 420,
+                      "content": "You can leave this tab open. Results will appear here when ready.",
+                      "lineHeight": 1.45,
+                      "textAlign": "center",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "zSW1C",
+                  "name": "postAnalysisCta",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "QDakr",
+                      "fill": "$accent",
+                      "content": "Next: Resume (My resumes)",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "bFTG8",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "When you’re ready, continue to step 3: pick a resume from the table and apply AI suggestions.",
+                      "lineHeight": 1.45,
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "UYTsS",
+                      "name": "ctaRow",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "EuHfz",
+                          "name": "btnApplyResume",
+                          "fill": "$accent",
+                          "cornerRadius": 8,
+                          "gap": 10,
+                          "padding": [
+                            12,
+                            20
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "lFcFP",
+                              "width": 20,
+                              "height": 20,
+                              "iconFontName": "file-text",
+                              "iconFontFamily": "lucide",
+                              "fill": "#FFFFFF"
+                            },
+                            {
+                              "type": "text",
+                              "id": "GPwSK",
+                              "fill": "#FFFFFF",
+                              "content": "Continue to My resumes",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "2LRVp",
+                          "fill": "$text-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Opens your resume list (same as ← My resumes in the header).",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }

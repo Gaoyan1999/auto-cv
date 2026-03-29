@@ -1,25 +1,25 @@
-import { Download } from 'lucide-react'
-import { useTranslation } from 'react-i18next'
-import { buildExportAllPayload, downloadJson } from '../lib/exportBackup'
-import { useAppState } from '../hooks/useAppState'
-import { LanguageSwitcher } from './LanguageSwitcher'
-import { ThemeToggle } from './ThemeToggle'
+import { Download } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { buildExportAllPayload, downloadJson } from '../lib/exportBackup';
+import { useAppState } from '../hooks/useAppState';
+import { LanguageSwitcher } from './LanguageSwitcher';
+import { ThemeToggle } from './ThemeToggle';
 
-type HeaderVariant = 'list' | 'workspace'
+type HeaderVariant = 'list' | 'workspace';
 
 export function AppHeader({ variant }: { variant: HeaderVariant }) {
-  const { t } = useTranslation()
-  const { resumes, goToList } = useAppState()
+  const { t } = useTranslation();
+  const { resumes, goToList } = useAppState();
 
   const onExport = () => {
     downloadJson(
       `job-resume-backup-${new Date().toISOString().slice(0, 10)}.json`,
-      buildExportAllPayload({ version: 2, resumes }),
-    )
-  }
+      buildExportAllPayload({ version: 2, resumes })
+    );
+  };
 
   const hint =
-    variant === 'list' ? t('app.dataLocalShort') : t('app.dataLocal')
+    variant === 'list' ? t('app.dataLocalShort') : t('app.dataLocal');
 
   return (
     <header className="flex flex-wrap items-center justify-between gap-4 border-b border-[var(--app-border)] bg-[var(--app-surface)] px-6 py-4 md:px-7">
@@ -59,5 +59,5 @@ export function AppHeader({ variant }: { variant: HeaderVariant }) {
         </button>
       </div>
     </header>
-  )
+  );
 }

@@ -5,12 +5,12 @@ import {
   useRef,
   useState,
   type ReactNode,
-} from 'react'
-import { AppStateContext } from './app-state-context'
-import { DEFAULT_RESUME } from '../constants/defaultResume'
-import { loadAppState, saveAppState } from '../lib/db'
-import i18n from '../i18n'
-import { runAnalysisJob } from '../lib/analyze'
+} from 'react';
+import { AppStateContext } from './app-state-context';
+import { DEFAULT_RESUME } from '../constants/defaultResume';
+import { loadAppState, saveAppState } from '../lib/db';
+import i18n from '../i18n';
+import { runAnalysisJob } from '../lib/analyze';
 import type {
   AppStateValue,
   AppTab,
@@ -18,39 +18,39 @@ import type {
   ResumeRecord,
   RewriteSuggestion,
   SuggestionStatus,
-} from '../types/app'
+} from '../types/app';
 
-type AnalysisPhase = 'idle' | 'running' | 'done' | 'error'
+type AnalysisPhase = 'idle' | 'running' | 'done' | 'error';
 
 function applySuggestionToResume(
   resume: string,
   oldText: string,
-  newText: string,
+  newText: string
 ): string {
   if (!resume.includes(oldText)) {
-    return resume
+    return resume;
   }
-  return resume.replace(oldText, newText)
+  return resume.replace(oldText, newText);
 }
 
 function applyAllInOrder(resume: string, list: RewriteSuggestion[]): string {
-  let r = resume
+  let r = resume;
   const sorted = [...list].sort(
-    (a, b) => r.indexOf(b.oldText) - r.indexOf(a.oldText),
-  )
+    (a, b) => r.indexOf(b.oldText) - r.indexOf(a.oldText)
+  );
   for (const s of sorted) {
-    r = applySuggestionToResume(r, s.oldText, s.newText)
+    r = applySuggestionToResume(r, s.oldText, s.newText);
   }
-  return r
+  return r;
 }
 
 function snapshotFromResumes(resumes: ResumeRecord[]): PersistedAppState {
-  return { version: 2, resumes }
+  return { version: 2, resumes };
 }
 
 function newResumeRecord(): ResumeRecord {
-  const id = crypto.randomUUID()
-  const day = new Date().toISOString().slice(0, 10)
+  const id = crypto.randomUUID();
+  const day = new Date().toISOString().slice(0, 10);
   return {
     id,
     name: `resume-${day}.md`,
@@ -61,123 +61,121 @@ function newResumeRecord(): ResumeRecord {
     suggestions: [],
     suggestionStatus: {},
     updatedAt: Date.now(),
-  }
+  };
 }
 
 export function AppStateProvider({ children }: { children: ReactNode }) {
-  const [resumes, setResumes] = useState<ResumeRecord[]>([])
-  const [activeResumeId, setActiveResumeId] = useState<string | null>(null)
-  const [tab, setTab] = useState<AppTab>('resume')
-  const [analysisPhase, setAnalysisPhase] = useState<AnalysisPhase>('idle')
-  const [analysisError, setAnalysisError] = useState<string | null>(null)
-  const [hydrated, setHydrated] = useState(false)
+  const [resumes, setResumes] = useState<ResumeRecord[]>([]);
+  const [activeResumeId, setActiveResumeId] = useState<string | null>(null);
+  const [tab, setTab] = useState<AppTab>('resume');
+  const [analysisPhase, setAnalysisPhase] = useState<AnalysisPhase>('idle');
+  const [analysisError, setAnalysisError] = useState<string | null>(null);
+  const [hydrated, setHydrated] = useState(false);
 
-  const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const suggestionsRef = useRef<RewriteSuggestion[]>([])
-  const resumesRef = useRef<ResumeRecord[]>([])
+  const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const suggestionsRef = useRef<RewriteSuggestion[]>([]);
+  const resumesRef = useRef<ResumeRecord[]>([]);
 
   const activeResume = useMemo(
     () =>
-      activeResumeId
-        ? resumes.find((r) => r.id === activeResumeId)
-        : undefined,
-    [resumes, activeResumeId],
-  )
+      activeResumeId ? resumes.find((r) => r.id === activeResumeId) : undefined,
+    [resumes, activeResumeId]
+  );
 
-  const resume = activeResume?.body ?? ''
-  const jd = activeResume?.jd ?? ''
-  const analysis = activeResume?.analysis ?? null
+  const resume = activeResume?.body ?? '';
+  const jd = activeResume?.jd ?? '';
+  const analysis = activeResume?.analysis ?? null;
   const suggestions = useMemo(
     () => activeResume?.suggestions ?? [],
-    [activeResume],
-  )
+    [activeResume]
+  );
   const suggestionStatus = useMemo(
     () => activeResume?.suggestionStatus ?? {},
-    [activeResume],
-  )
+    [activeResume]
+  );
 
   useEffect(() => {
-    suggestionsRef.current = suggestions
-  }, [suggestions])
+    suggestionsRef.current = suggestions;
+  }, [suggestions]);
 
   useEffect(() => {
-    resumesRef.current = resumes
-  }, [resumes])
+    resumesRef.current = resumes;
+  }, [resumes]);
 
   useEffect(() => {
     void (async () => {
-      const state = await loadAppState()
-      setResumes(state.resumes)
-      setHydrated(true)
-    })()
-  }, [])
+      const state = await loadAppState();
+      setResumes(state.resumes);
+      setHydrated(true);
+    })();
+  }, []);
 
   useEffect(() => {
     if (!hydrated) {
-      return
+      return;
     }
     if (saveTimer.current) {
-      clearTimeout(saveTimer.current)
+      clearTimeout(saveTimer.current);
     }
     saveTimer.current = setTimeout(() => {
-      void saveAppState(snapshotFromResumes(resumes))
-    }, 450)
+      void saveAppState(snapshotFromResumes(resumes));
+    }, 450);
     return () => {
       if (saveTimer.current) {
-        clearTimeout(saveTimer.current)
+        clearTimeout(saveTimer.current);
       }
-    }
-  }, [hydrated, resumes])
+    };
+  }, [hydrated, resumes]);
 
   const setResume = useCallback(
     (next: string | ((prev: string) => string)) => {
       if (!activeResumeId) {
-        return
+        return;
       }
       setResumes((prev) =>
         prev.map((r) => {
           if (r.id !== activeResumeId) {
-            return r
+            return r;
           }
-          const body = typeof next === 'function' ? next(r.body) : next
-          return { ...r, body, updatedAt: Date.now() }
-        }),
-      )
+          const body = typeof next === 'function' ? next(r.body) : next;
+          return { ...r, body, updatedAt: Date.now() };
+        })
+      );
     },
-    [activeResumeId],
-  )
+    [activeResumeId]
+  );
 
   const setJd = useCallback(
     (next: string | ((prev: string) => string)) => {
       if (!activeResumeId) {
-        return
+        return;
       }
       setResumes((prev) =>
         prev.map((r) => {
           if (r.id !== activeResumeId) {
-            return r
+            return r;
           }
-          const jdNext = typeof next === 'function' ? next(r.jd) : next
-          return { ...r, jd: jdNext, updatedAt: Date.now() }
-        }),
-      )
+          const jdNext = typeof next === 'function' ? next(r.jd) : next;
+          return { ...r, jd: jdNext, updatedAt: Date.now() };
+        })
+      );
     },
-    [activeResumeId],
-  )
+    [activeResumeId]
+  );
 
   const runAnalysis = useCallback(async () => {
-    const id = activeResumeId
+    const id = activeResumeId;
     if (!id) {
-      return
+      return;
     }
-    const r = resumesRef.current.find((x) => x.id === id)
+    const r = resumesRef.current.find((x) => x.id === id);
     if (!r) {
-      return
+      return;
     }
-    setAnalysisPhase('running')
-    setAnalysisError(null)
+    setAnalysisPhase('running');
+    setAnalysisError(null);
     try {
-      const { result, suggestions: next } = await runAnalysisJob(r.body, r.jd)
+      const { result, suggestions: next } = await runAnalysisJob(r.body, r.jd);
       setResumes((prev) =>
         prev.map((x) =>
           x.id === id
@@ -186,36 +184,36 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
                 analysis: result,
                 suggestions: next,
                 suggestionStatus: Object.fromEntries(
-                  next.map((s) => [s.id, 'pending' as SuggestionStatus]),
+                  next.map((s) => [s.id, 'pending' as SuggestionStatus])
                 ),
                 updatedAt: Date.now(),
               }
-            : x,
-        ),
-      )
-      setAnalysisPhase('done')
-      setTab('analysis')
+            : x
+        )
+      );
+      setAnalysisPhase('done');
+      setTab('analysis');
     } catch (e) {
-      setAnalysisPhase('error')
-      setAnalysisError(e instanceof Error ? e.message : 'Unknown error')
+      setAnalysisPhase('error');
+      setAnalysisError(e instanceof Error ? e.message : 'Unknown error');
     }
-  }, [activeResumeId])
+  }, [activeResumeId]);
 
   const acceptSuggestion = useCallback(
     (id: string) => {
       if (!activeResumeId) {
-        return
+        return;
       }
       setResumes((prev) => {
-        const r = prev.find((x) => x.id === activeResumeId)
+        const r = prev.find((x) => x.id === activeResumeId);
         if (!r) {
-          return prev
+          return prev;
         }
-        const s = r.suggestions.find((x) => x.id === id)
+        const s = r.suggestions.find((x) => x.id === id);
         if (!s) {
-          return prev
+          return prev;
         }
-        const body = applySuggestionToResume(r.body, s.oldText, s.newText)
+        const body = applySuggestionToResume(r.body, s.oldText, s.newText);
         return prev.map((x) =>
           x.id === activeResumeId
             ? {
@@ -224,17 +222,17 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
                 suggestionStatus: { ...x.suggestionStatus, [id]: 'accepted' },
                 updatedAt: Date.now(),
               }
-            : x,
-        )
-      })
+            : x
+        );
+      });
     },
-    [activeResumeId],
-  )
+    [activeResumeId]
+  );
 
   const rejectSuggestion = useCallback(
     (id: string) => {
       if (!activeResumeId) {
-        return
+        return;
       }
       setResumes((prev) =>
         prev.map((x) =>
@@ -244,132 +242,143 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
                 suggestionStatus: { ...x.suggestionStatus, [id]: 'rejected' },
                 updatedAt: Date.now(),
               }
-            : x,
-        ),
-      )
+            : x
+        )
+      );
     },
-    [activeResumeId],
-  )
+    [activeResumeId]
+  );
 
   const pendingSuggestions = useMemo(() => {
     if (!activeResume) {
-      return []
+      return [];
     }
     return activeResume.suggestions.filter(
-      (s) => activeResume.suggestionStatus[s.id] === 'pending',
-    )
-  }, [activeResume])
+      (s) => activeResume.suggestionStatus[s.id] === 'pending'
+    );
+  }, [activeResume]);
 
   const acceptAllSuggestions = useCallback(() => {
     if (!activeResumeId || !activeResume) {
-      return
+      return;
     }
     const pending = activeResume.suggestions.filter(
-      (s) => activeResume.suggestionStatus[s.id] === 'pending',
-    )
+      (s) => activeResume.suggestionStatus[s.id] === 'pending'
+    );
     if (!pending.length) {
-      return
+      return;
     }
-    const body = applyAllInOrder(activeResume.body, pending)
+    const body = applyAllInOrder(activeResume.body, pending);
     setResumes((prev) =>
       prev.map((x) => {
         if (x.id !== activeResumeId) {
-          return x
+          return x;
         }
-        const nextStatus = { ...x.suggestionStatus }
+        const nextStatus = { ...x.suggestionStatus };
         for (const s of pending) {
-          nextStatus[s.id] = 'accepted'
+          nextStatus[s.id] = 'accepted';
         }
-        return { ...x, body, suggestionStatus: nextStatus, updatedAt: Date.now() }
-      }),
-    )
-  }, [activeResume, activeResumeId])
+        return {
+          ...x,
+          body,
+          suggestionStatus: nextStatus,
+          updatedAt: Date.now(),
+        };
+      })
+    );
+  }, [activeResume, activeResumeId]);
 
   const rejectAllSuggestions = useCallback(() => {
     if (!activeResumeId || !activeResume) {
-      return
+      return;
     }
     setResumes((prev) =>
       prev.map((x) => {
         if (x.id !== activeResumeId) {
-          return x
+          return x;
         }
-        const nextStatus = { ...x.suggestionStatus }
+        const nextStatus = { ...x.suggestionStatus };
         for (const s of x.suggestions) {
           if (nextStatus[s.id] === 'pending') {
-            nextStatus[s.id] = 'rejected'
+            nextStatus[s.id] = 'rejected';
           }
         }
-        return { ...x, suggestionStatus: nextStatus, updatedAt: Date.now() }
-      }),
-    )
-  }, [activeResume, activeResumeId])
+        return { ...x, suggestionStatus: nextStatus, updatedAt: Date.now() };
+      })
+    );
+  }, [activeResume, activeResumeId]);
 
   const openResume = useCallback((id: string) => {
-    const r = resumesRef.current.find((x) => x.id === id)
-    setActiveResumeId(id)
-    setTab('resume')
-    setAnalysisPhase(r?.analysis ? 'done' : 'idle')
-    setAnalysisError(null)
-  }, [])
+    const r = resumesRef.current.find((x) => x.id === id);
+    setActiveResumeId(id);
+    setTab('resume');
+    setAnalysisPhase(r?.analysis ? 'done' : 'idle');
+    setAnalysisError(null);
+  }, []);
 
   const goToList = useCallback(() => {
-    setActiveResumeId(null)
-  }, [])
+    setActiveResumeId(null);
+  }, []);
 
   const createResume = useCallback(() => {
-    const rec = newResumeRecord()
-    setResumes((prev) => [...prev, rec])
-    setActiveResumeId(rec.id)
-    setTab('resume')
-    setAnalysisPhase('idle')
-    setAnalysisError(null)
-  }, [])
+    const rec = newResumeRecord();
+    setResumes((prev) => [...prev, rec]);
+    setActiveResumeId(rec.id);
+    setTab('resume');
+    setAnalysisPhase('idle');
+    setAnalysisError(null);
+  }, []);
 
   const forkResume = useCallback((id: string) => {
-    const source = resumesRef.current.find((r) => r.id === id)
+    const source = resumesRef.current.find((r) => r.id === id);
     if (!source) {
-      return
+      return;
     }
-    const baseName = source.name.replace(/\.md$/i, '')
+    const baseName = source.name.replace(/\.md$/i, '');
     const nameIn = window.prompt(
       i18n.t('list.forkNamePrompt'),
-      `${baseName}-copy.md`,
-    )
+      `${baseName}-copy.md`
+    );
     if (nameIn == null || !nameIn.trim()) {
-      return
+      return;
     }
-    const descIn = window.prompt(i18n.t('list.forkDescPrompt'), source.description)
-    const desc = descIn ?? ''
+    const descIn = window.prompt(
+      i18n.t('list.forkDescPrompt'),
+      source.description
+    );
+    const desc = descIn ?? '';
     const copy: ResumeRecord = {
       ...source,
       id: crypto.randomUUID(),
       name: nameIn.trim(),
       description: desc.trim(),
       updatedAt: Date.now(),
-    }
-    setResumes((prev) => [...prev, copy])
-  }, [])
+    };
+    setResumes((prev) => [...prev, copy]);
+  }, []);
 
-  const deleteResume = useCallback((id: string) => {
-    const r = resumesRef.current.find((x) => x.id === id)
-    if (!r) {
-      return
-    }
-    if (!window.confirm(i18n.t('list.deleteConfirm', { name: r.name }))) {
-      return
-    }
-    setResumes((prev) => {
-      const next = prev.filter((x) => x.id !== id)
-      if (next.length === 0) {
-        return [newResumeRecord()]
+  const deleteResume = useCallback(
+    (id: string) => {
+      const r = resumesRef.current.find((x) => x.id === id);
+      if (!r) {
+        return;
       }
-      return next
-    })
-    if (activeResumeId === id) {
-      setActiveResumeId(null)
-    }
-  }, [activeResumeId])
+      if (!window.confirm(i18n.t('list.deleteConfirm', { name: r.name }))) {
+        return;
+      }
+      setResumes((prev) => {
+        const next = prev.filter((x) => x.id !== id);
+        if (next.length === 0) {
+          return [newResumeRecord()];
+        }
+        return next;
+      });
+      if (activeResumeId === id) {
+        setActiveResumeId(null);
+      }
+    },
+    [activeResumeId]
+  );
 
   const value = useMemo<AppStateValue>(
     () => ({
@@ -424,10 +433,12 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
       createResume,
       forkResume,
       deleteResume,
-    ],
-  )
+    ]
+  );
 
   return (
-    <AppStateContext.Provider value={value}>{children}</AppStateContext.Provider>
-  )
+    <AppStateContext.Provider value={value}>
+      {children}
+    </AppStateContext.Provider>
+  );
 }

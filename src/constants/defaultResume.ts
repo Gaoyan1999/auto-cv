@@ -8,4 +8,4 @@ Senior Software Engineer
 
 - **Startup Labs** — Engineer (2018–2021)
 - Shipped the mobile onboarding flow.
-`
+`;

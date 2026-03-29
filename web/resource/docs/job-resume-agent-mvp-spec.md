@@ -38,12 +38,12 @@ Active job seekers who apply to multiple postings (including role or industry sw
 
 ### Platform
 
-| Decision | Choice |
-|----------|--------|
-| Client | **Web application** (desktop-first acceptable; mobile-friendly where cheap) |
-| Authentication | **None** in v1 |
-| Persistence | **Browser local storage** — prefer **IndexedDB** for full resume + JD payloads (avoid `localStorage` size limits) |
-| JD input | **Paste text** as the supported path for v1 |
+| Decision       | Choice                                                                                                            |
+| -------------- | ----------------------------------------------------------------------------------------------------------------- |
+| Client         | **Web application** (desktop-first acceptable; mobile-friendly where cheap)                                       |
+| Authentication | **None** in v1                                                                                                    |
+| Persistence    | **Browser local storage** — prefer **IndexedDB** for full resume + JD payloads (avoid `localStorage` size limits) |
+| JD input       | **Paste text** as the supported path for v1                                                                       |
 
 ### Core capabilities
 
@@ -81,12 +81,12 @@ Active job seekers who apply to multiple postings (including role or industry sw
 
 Automation should **reduce friction**, not block launch.
 
-| Phase | Mechanism | Purpose |
-|-----|-----------|---------|
-| **MVP** | Paste + optional **clipboard read** (with user permission) | Fewer steps than manual Cmd+V in some flows |
-| **Phase 2a** | **Bookmarklet** or similar lightweight capture | Send selected or visible text from a job page into the app |
-| **Phase 2b** | **Minimal browser extension** | Only forwards readable page text to the already-open web app; **editing stays in the web app** |
-| **Later (evaluate)** | Server-assisted URL fetch | Only if there is clear demand, budget for compliance, and a sustainable approach to third-party sites |
+| Phase                | Mechanism                                                  | Purpose                                                                                               |
+| -------------------- | ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| **MVP**              | Paste + optional **clipboard read** (with user permission) | Fewer steps than manual Cmd+V in some flows                                                           |
+| **Phase 2a**         | **Bookmarklet** or similar lightweight capture             | Send selected or visible text from a job page into the app                                            |
+| **Phase 2b**         | **Minimal browser extension**                              | Only forwards readable page text to the already-open web app; **editing stays in the web app**        |
+| **Later (evaluate)** | Server-assisted URL fetch                                  | Only if there is clear demand, budget for compliance, and a sustainable approach to third-party sites |
 
 **Rationale:** A **standalone site** ships faster, keeps the editor in one codebase, and fits **no-login + local-first** storage. Extensions are valuable for **“get JD from this tab”** but add store review and DOM maintenance; defer until users complain about paste fatigue.
 
@@ -94,12 +94,12 @@ Automation should **reduce friction**, not block launch.
 
 ## Key risks and mitigations
 
-| Risk | Mitigation |
-|------|------------|
-| Overclaiming “chance of getting hired” | Product copy and model prompts emphasize **fit and gaps**, not hiring odds. |
-| Hallucinated resume facts | Constrained rewrite flows; user confirmation before committing text; optional “facts I assert are true” checkpoint. |
-| Data loss without cloud | IndexedDB + export/backup; in-app warnings before destructive actions. |
-| Competitors (generic LLM chat) | Differentiate with **structured JD↔resume mapping**, **version-safe editing**, and **local-first privacy** positioning. |
+| Risk                                   | Mitigation                                                                                                              |
+| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Overclaiming “chance of getting hired” | Product copy and model prompts emphasize **fit and gaps**, not hiring odds.                                             |
+| Hallucinated resume facts              | Constrained rewrite flows; user confirmation before committing text; optional “facts I assert are true” checkpoint.     |
+| Data loss without cloud                | IndexedDB + export/backup; in-app warnings before destructive actions.                                                  |
+| Competitors (generic LLM chat)         | Differentiate with **structured JD↔resume mapping**, **version-safe editing**, and **local-first privacy** positioning. |
 
 ---
 
@@ -121,6 +121,6 @@ Automation should **reduce friction**, not block launch.
 
 ## Document history
 
-| Version | Date | Notes |
-|---------|------|--------|
-| 0.1 | 2026-03-28 | Initial spec from MVP alignment (web, no login, IndexedDB, paste-first, automation phased). |
+| Version | Date       | Notes                                                                                       |
+| ------- | ---------- | ------------------------------------------------------------------------------------------- |
+| 0.1     | 2026-03-28 | Initial spec from MVP alignment (web, no login, IndexedDB, paste-first, automation phased). |

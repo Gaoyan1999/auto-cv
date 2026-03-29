@@ -1,14 +1,14 @@
-import { Copy, Trash2 } from 'lucide-react'
-import { useTranslation } from 'react-i18next'
-import { Button } from './ui/Button'
-import { useAppState } from '../hooks/useAppState'
+import { Copy, Trash2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { Button } from './ui/Button';
+import { useAppState } from '../hooks/useAppState';
 
 export function ResumeListPage() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
   const { resumes, createResume, openResume, forkResume, deleteResume } =
-    useAppState()
+    useAppState();
 
-  const sorted = [...resumes].sort((a, b) => b.updatedAt - a.updatedAt)
+  const sorted = [...resumes].sort((a, b) => b.updatedAt - a.updatedAt);
 
   return (
     <div className="flex min-h-0 flex-1 flex-col gap-5 p-6 md:p-8">
@@ -75,5 +75,5 @@ export function ResumeListPage() {
         {t('list.tip')}
       </p>
     </div>
-  )
+  );
 }

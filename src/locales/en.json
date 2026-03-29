@@ -33,11 +33,10 @@
     "collapseSidebar": "Collapse sidebar",
     "expandSidebar": "Expand sidebar",
     "resume": "Resume",
-    "jd": "Job description",
     "analysis": "Analysis"
   },
   "resume": {
-    "step": "Step 1 of 3 · Resume",
+    "step": "Step 3 of 3 · Resume",
     "heading": "Resume",
     "subtitle": "Edit with inline AI suggestions. Accept or reject each change. Nothing is applied without your confirmation.",
     "editor": "Editor",
@@ -51,7 +50,7 @@
     "reject": "Reject"
   },
   "jd": {
-    "step": "Step 2 of 3 · Job posting",
+    "step": "Step 1 of 3 · Job posting",
     "heading": "Job description",
     "subtitle": "Paste the posting text. Nothing is uploaded without your consent.",
     "label": "Posting text",
@@ -64,30 +63,37 @@
     },
     "footerHint": "After you paste the posting, run analysis to compare it to your current resume.",
     "pasteClipboard": "Paste from clipboard",
-    "continueAnalysis": "Continue to Analysis",
-    "orSidebar": "You can also open the Analysis tab in the sidebar."
+    "continueAnalysis": "Continue to analysis"
   },
   "analysis": {
-    "step": "Step 3 of 3 · Analysis",
-    "heading": "Analysis",
-    "subtitle": "Fit, gaps, and traceability to JD lines. This is not a hiring prediction.",
+    "flow": {
+      "aria": "Workflow steps",
+      "step1": "Posting",
+      "step2": "Analysis",
+      "step3": "Resume",
+      "hintJd": "Step 1 of 3 · Paste the job posting, then run analysis.",
+      "hintLoading": "Step 2 of 3 · Analysis in progress — stay on this tab.",
+      "hintResults": "Step 2 of 3 · Review traceability, gaps, and fit — then continue to your resume.",
+      "hintError": "Step 2 of 3 · Analysis failed — edit the posting or retry."
+    },
+    "jdNextLabel": "Next step",
+    "jdNextHint": "Continue runs analysis. Loading and results replace this panel when ready.",
+    "jdFooterNote": "You won’t see posting, loading, and results all at once — they swap in this column.",
     "loadingTitle": "Analyzing fit, gaps, and JD traceability…",
     "loadingBody": "Comparing your resume to this posting. This usually takes a few seconds.",
     "loadingHint": "You can leave this tab open. Results will appear here when ready.",
     "errorTitle": "Couldn’t complete analysis",
     "errorBody": "Check your connection and try again.",
     "retry": "Retry",
-    "empty": "No analysis yet. Paste a job description and run analysis.",
-    "run": "Run analysis",
     "fitTitle": "Fit summary",
     "gapsTitle": "Gaps to strengthen",
     "traceTitle": "Traceability",
     "traceJdLabel": "JD: ",
     "traceEmpty": "No JD lines were extracted for traceability yet.",
-    "ctaKicker": "Ready to improve your resume?",
-    "ctaBody": "Open the Resume tab to review and accept or reject each AI suggestion. Your canonical resume only changes when you accept.",
-    "ctaResume": "Apply suggestions in Resume",
-    "ctaHint": "Same as choosing the Resume tab — edits appear as inline suggestions.",
+    "ctaKicker": "Next: Resume",
+    "ctaBody": "When you’re ready, continue to step 3: open the Resume tab and apply AI suggestions.",
+    "ctaResume": "Open Resume",
+    "ctaHint": "Same as the Resume item in the sidebar (or ← My resumes in the header).",
     "privacy": "Privacy: resume and posting text are stored locally in this browser (IndexedDB). Export creates a JSON file on your device. This MVP runs analysis in your browser without a login; review the export if you share backups."
   },
   "lang": {

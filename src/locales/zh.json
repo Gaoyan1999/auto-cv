@@ -33,11 +33,10 @@
     "collapseSidebar": "收起侧边栏",
     "expandSidebar": "展开侧边栏",
     "resume": "简历",
-    "jd": "职位描述",
     "analysis": "分析"
   },
   "resume": {
-    "step": "第 1 步 / 共 3 步 · 简历",
+    "step": "第 3 步 / 共 3 步 · 简历",
     "heading": "简历",
     "subtitle": "在此编辑并查看内联 AI 改写建议。需你确认后才会写入正文。",
     "editor": "编辑",
@@ -51,7 +50,7 @@
     "reject": "拒绝"
   },
   "jd": {
-    "step": "第 2 步 / 共 3 步 · 职位",
+    "step": "第 1 步 / 共 3 步 · 职位",
     "heading": "职位描述",
     "subtitle": "粘贴完整职位文本。未经你同意不会上传。",
     "label": "职位正文",
@@ -64,30 +63,37 @@
     },
     "footerHint": "粘贴完成后运行分析，将与你当前的简历进行对比。",
     "pasteClipboard": "从剪贴板粘贴",
-    "continueAnalysis": "前往分析",
-    "orSidebar": "也可在侧边栏打开「分析」标签。"
+    "continueAnalysis": "继续分析"
   },
   "analysis": {
-    "step": "第 3 步 / 共 3 步 · 分析",
-    "heading": "分析",
-    "subtitle": "匹配度、差距与可追溯对应关系。并非录用概率预测。",
+    "flow": {
+      "aria": "流程步骤",
+      "step1": "职位",
+      "step2": "分析",
+      "step3": "简历",
+      "hintJd": "第 1 步 / 共 3 步 · 粘贴职位正文，然后运行分析。",
+      "hintLoading": "第 2 步 / 共 3 步 · 正在分析 — 请保持在此标签页。",
+      "hintResults": "第 2 步 / 共 3 步 · 查看对应关系、差距与匹配摘要，然后回到简历。",
+      "hintError": "第 2 步 / 共 3 步 · 分析失败 — 可修改正文后重试。"
+    },
+    "jdNextLabel": "下一步",
+    "jdNextHint": "点击继续将开始分析；加载与结果会依次替换本栏内容。",
+    "jdFooterNote": "职位编辑、加载中与结果不会同时铺满屏幕，会在本列切换显示。",
     "loadingTitle": "正在分析匹配度、差距与 JD 对应…",
     "loadingBody": "正在将你的简历与该职位对比，通常只需数秒。",
     "loadingHint": "可保持此标签页打开，完成后结果会显示在此处。",
     "errorTitle": "分析未完成",
     "errorBody": "请检查网络连接后重试。",
     "retry": "重试",
-    "empty": "尚无分析结果。请先粘贴职位描述并运行分析。",
-    "run": "运行分析",
     "fitTitle": "匹配摘要",
     "gapsTitle": "可加强之处",
     "traceTitle": "对应关系",
     "traceJdLabel": "JD：",
     "traceEmpty": "暂无可提取的 JD 行用于对应说明。",
-    "ctaKicker": "准备优化简历？",
-    "ctaBody": "打开「简历」标签，逐条查看并接受或拒绝 AI 建议。只有你接受后才会写入正文。",
-    "ctaResume": "在简历中应用建议",
-    "ctaHint": "与直接切换到「简历」标签相同——建议以行内形式展示。",
+    "ctaKicker": "下一步：简历",
+    "ctaBody": "准备好后进入第 3 步：打开「简历」标签并应用 AI 建议。",
+    "ctaResume": "打开简历",
+    "ctaHint": "与侧边栏「简历」相同（或与顶栏「← 我的简历」回到列表后再打开）。",
     "privacy": "隐私：简历与职位文本默认保存在本机浏览器（IndexedDB）。导出会在你的设备上生成 JSON 文件。本 MVP 在浏览器内完成分析，无需登录；若分享备份文件请注意其中内容。"
   },
   "lang": {

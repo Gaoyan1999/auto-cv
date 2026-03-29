@@ -1,13 +1,13 @@
-import i18n from 'i18next'
-import LanguageDetector from 'i18next-browser-languagedetector'
-import { initReactI18next } from 'react-i18next'
+import i18n from 'i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+import { initReactI18next } from 'react-i18next';
 
-import en from './locales/en.json'
-import zh from './locales/zh.json'
+import en from './locales/en.json';
+import zh from './locales/zh.json';
 
 function syncDocumentLang(lng: string) {
-  const short = lng.split('-')[0] ?? lng
-  document.documentElement.lang = short === 'zh' ? 'zh-CN' : 'en'
+  const short = lng.split('-')[0] ?? lng;
+  document.documentElement.lang = short === 'zh' ? 'zh-CN' : 'en';
 }
 
 void i18n
@@ -30,9 +30,9 @@ void i18n
     },
   })
   .then(() => {
-    syncDocumentLang(i18n.language)
-  })
+    syncDocumentLang(i18n.language);
+  });
 
-i18n.on('languageChanged', syncDocumentLang)
+i18n.on('languageChanged', syncDocumentLang);
 
-export default i18n
+export default i18n;
