@@ -70,9 +70,10 @@ export interface AppStateValue {
   acceptAllSuggestions: () => void;
   rejectAllSuggestions: () => void;
   pendingSuggestions: RewriteSuggestion[];
-  openResume: (id: string) => void;
+  openResume: (id: string, initialTab?: AppTab) => void;
   goToList: () => void;
-  createResume: () => void;
+  /** Creates a resume and returns its id (for routing to `/polish/:id/...`). */
+  createResume: () => string;
   forkResume: (id: string) => void;
   deleteResume: (id: string) => void;
 }

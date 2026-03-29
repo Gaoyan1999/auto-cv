@@ -1,12 +1,13 @@
 import { Copy, Trash2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import { Button } from './ui/Button';
 import { useAppState } from '../hooks/useAppState';
 
 export function ResumeListPage() {
   const { t } = useTranslation();
-  const { resumes, createResume, openResume, forkResume, deleteResume } =
-    useAppState();
+  const navigate = useNavigate();
+  const { resumes, createResume, forkResume, deleteResume } = useAppState();
 
   const sorted = [...resumes].sort((a, b) => b.updatedAt - a.updatedAt);
 
@@ -16,7 +17,14 @@ export function ResumeListPage() {
         <h1 className="text-left text-[22px] font-semibold text-[var(--app-text)]">
           {t('list.title')}
         </h1>
-        <Button variant="primary" type="button" onClick={createResume}>
+        <Button
+          variant="primary"
+          type="button"
+          onClick={() => {
+            const id = createResume();
+            navigate(`/polish/${id}/resume`);
+          }}
+        >
           {t('list.newResume')}
         </Button>
       </div>
@@ -52,7 +60,7 @@ export function ResumeListPage() {
                 <Button
                   variant="secondary"
                   type="button"
-                  onClick={() => openResume(r.id)}
+                  onClick={() => navigate(`/polish/${r.id}/resume`)}
                 >
                   {t('list.openPolish')}
                 </Button>
