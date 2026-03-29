@@ -1,5 +1,6 @@
 import { AlertCircle, FileText, RefreshCw } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { useAppNavigate } from '../../routes/useAppNavigate';
 import { assessJobDescription } from '../../lib/jdValidation';
 import { Button } from '../ui/Button';
 import { useAppState } from '../../hooks/useAppState';
@@ -10,14 +11,15 @@ import {
 
 export function AnalysisPanel() {
   const { t } = useTranslation();
+  const { goToPolish } = useAppNavigate();
   const {
+    activeResumeId,
     analysis,
     analysisPhase,
     analysisError,
     runAnalysis,
     jd,
     setJd,
-    setTab,
   } = useAppState();
 
   const showLoading = analysisPhase === 'running';
@@ -168,7 +170,14 @@ export function AnalysisPanel() {
               <p className="text-sm text-[var(--app-muted)]">
                 {t('analysis.ctaBody')}
               </p>
-              <Button variant="primary" onClick={() => setTab('resume')}>
+              <Button
+                variant="primary"
+                onClick={() => {
+                  if (activeResumeId) {
+                    goToPolish(activeResumeId, 'resume');
+                  }
+                }}
+              >
                 <FileText className="h-5 w-5" aria-hidden />
                 {t('analysis.ctaResume')}
               </Button>

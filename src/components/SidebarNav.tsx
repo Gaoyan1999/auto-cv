@@ -2,6 +2,8 @@ import { useCallback, useState } from 'react';
 import { Tab, TabGroup, TabList } from '@headlessui/react';
 import { FileText, PanelLeft, PanelRight, ScanSearch } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
+import { useAppNavigate } from '../routes/useAppNavigate';
 import type { AppTab } from '../types/app';
 import { useAppState } from '../hooks/useAppState';
 
@@ -25,12 +27,15 @@ function readCollapsed(): boolean {
 
 export function SidebarNav() {
   const { t } = useTranslation();
-  const { tab, setTab } = useAppState();
+  const { goToPolish } = useAppNavigate();
+  const { section } = useParams();
+  const { activeResumeId } = useAppState();
   const [collapsed, setCollapsed] = useState(readCollapsed);
 
+  const routeTab: AppTab = section === 'analysis' ? 'analysis' : 'resume';
   const selectedIndex = Math.max(
     0,
-    items.findIndex((i) => i.id === tab)
+    items.findIndex((i) => i.id === routeTab)
   );
 
   const toggleCollapsed = useCallback(() => {
@@ -108,7 +113,12 @@ export function SidebarNav() {
       <TabGroup
         vertical
         selectedIndex={selectedIndex}
-        onChange={(index) => setTab(items[index].id)}
+        onChange={(index) => {
+          if (!activeResumeId) {
+            return;
+          }
+          goToPolish(activeResumeId, items[index].id);
+        }}
       >
         <TabList className="flex flex-col gap-1">
           {items.map(({ id, icon: Icon, labelKey }) => (

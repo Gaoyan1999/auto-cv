@@ -192,7 +192,6 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
         )
       );
       setAnalysisPhase('done');
-      setTab('analysis');
     } catch (e) {
       setAnalysisPhase('error');
       setAnalysisError(e instanceof Error ? e.message : 'Unknown error');
@@ -308,10 +307,10 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
     );
   }, [activeResume, activeResumeId]);
 
-  const openResume = useCallback((id: string) => {
+  const openResume = useCallback((id: string, initialTab: AppTab = 'resume') => {
     const r = resumesRef.current.find((x) => x.id === id);
     setActiveResumeId(id);
-    setTab('resume');
+    setTab(initialTab);
     setAnalysisPhase(r?.analysis ? 'done' : 'idle');
     setAnalysisError(null);
   }, []);
@@ -327,6 +326,7 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
     setTab('resume');
     setAnalysisPhase('idle');
     setAnalysisError(null);
+    return rec.id;
   }, []);
 
   const forkResume = useCallback((id: string) => {
