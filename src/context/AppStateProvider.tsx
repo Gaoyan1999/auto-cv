@@ -75,6 +75,8 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const suggestionsRef = useRef<RewriteSuggestion[]>([]);
   const resumesRef = useRef<ResumeRecord[]>([]);
+  /** Incremented to ignore stale `runAnalysis` completion after `backToJdStep`. */
+  const analysisRunIdRef = useRef(0);
 
   const activeResume = useMemo(
     () =>
@@ -172,10 +174,14 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
     if (!r) {
       return;
     }
+    const runId = ++analysisRunIdRef.current;
     setAnalysisPhase('running');
     setAnalysisError(null);
     try {
       const { result, suggestions: next } = await runAnalysisJob(r.body, r.jd);
+      if (runId !== analysisRunIdRef.current) {
+        return;
+      }
       setResumes((prev) =>
         prev.map((x) =>
           x.id === id
@@ -193,10 +199,19 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
       );
       setAnalysisPhase('done');
     } catch (e) {
+      if (runId !== analysisRunIdRef.current) {
+        return;
+      }
       setAnalysisPhase('error');
       setAnalysisError(e instanceof Error ? e.message : 'Unknown error');
     }
   }, [activeResumeId]);
+
+  const backToJdStep = useCallback(() => {
+    analysisRunIdRef.current += 1;
+    setAnalysisPhase('idle');
+    setAnalysisError(null);
+  }, []);
 
   const acceptSuggestion = useCallback(
     (id: string) => {
@@ -397,6 +412,7 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
       analysisPhase,
       analysisError,
       runAnalysis,
+      backToJdStep,
       acceptSuggestion,
       rejectSuggestion,
       acceptAllSuggestions,
@@ -423,6 +439,7 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
       analysisPhase,
       analysisError,
       runAnalysis,
+      backToJdStep,
       acceptSuggestion,
       rejectSuggestion,
       acceptAllSuggestions,
