@@ -1,4 +1,4 @@
-import type { AnalysisResult, RewriteSuggestion } from '../types/app';
+import type { AnalysisResult, RewriteSuggestion } from '@/types/app';
 
 const STOP = new Set(
   [

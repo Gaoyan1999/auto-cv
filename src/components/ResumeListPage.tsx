@@ -1,8 +1,8 @@
 import { Copy, Trash2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { useAppNavigate } from '../routes/useAppNavigate';
+import { useAppNavigate } from '@/routes/useAppNavigate';
 import { Button } from './ui/Button';
-import { useAppState } from '../hooks/useAppState';
+import { useAppState } from '@/hooks/useAppState';
 
 export function ResumeListPage() {
   const { t } = useTranslation();

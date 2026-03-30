@@ -7,11 +7,11 @@ import {
 } from 'lucide-react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useAppNavigate } from '../../routes/useAppNavigate';
-import { assessJobDescription } from '../../lib/jdValidation';
-import { Button } from '../ui/Button';
-import { ConfirmDialog } from '../ui/ConfirmDialog';
-import { useAppState } from '../../hooks/useAppState';
+import { useAppNavigate } from '@/routes/useAppNavigate';
+import { assessJobDescription } from '@/lib/jdValidation';
+import { Button } from '@/components/ui/Button';
+import { ConfirmDialog } from '@/components/ui/ConfirmDialog';
+import { useAppState } from '@/hooks/useAppState';
 import {
   AnalysisFlowStepper,
   type AnalysisFlowMode,

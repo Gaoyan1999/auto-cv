@@ -1,4 +1,4 @@
-import type { AppTab } from '../types/app';
+import type { AppTab } from '@/types/app';
 
 /**
  * Route patterns for `<Route path={...}>` — keep in sync with path builders below.

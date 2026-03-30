@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useNavigate, type NavigateOptions } from 'react-router-dom';
-import type { AppTab } from '../types/app';
+import type { AppTab } from '@/types/app';
 import { AppPath } from './routes';
 
 /**

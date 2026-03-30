@@ -2,8 +2,8 @@ import { Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Button } from '../ui/Button';
-import { useAppState } from '../../hooks/useAppState';
+import { Button } from '@/components/ui/Button';
+import { useAppState } from '@/hooks/useAppState';
 
 export function ResumeWorkspace() {
   const { t } = useTranslation();

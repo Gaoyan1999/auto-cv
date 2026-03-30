@@ -6,7 +6,7 @@ import {
   type ReactNode,
 } from 'react';
 import { ThemeContext, type ThemeContextValue } from './theme-context';
-import type { ThemePreference } from '../types/theme';
+import type { ThemePreference } from '@/types/theme';
 
 const STORAGE_KEY = 'theme';
 
