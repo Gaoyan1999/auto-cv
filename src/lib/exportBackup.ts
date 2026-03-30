@@ -3,7 +3,7 @@ import type {
   PersistedAppState,
   ResumeRecord,
   RewriteSuggestion,
-} from '../types/app';
+} from '@/types/app';
 
 export interface ExportPayload {
   exportedAt: string;

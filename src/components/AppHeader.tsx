@@ -1,8 +1,8 @@
 import { Download } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { useAppNavigate } from '../routes/useAppNavigate';
-import { buildExportAllPayload, downloadJson } from '../lib/exportBackup';
-import { useAppState } from '../hooks/useAppState';
+import { useAppNavigate } from '@/routes/useAppNavigate';
+import { buildExportAllPayload, downloadJson } from '@/lib/exportBackup';
+import { useAppState } from '@/hooks/useAppState';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { ThemeToggle } from './ThemeToggle';
 

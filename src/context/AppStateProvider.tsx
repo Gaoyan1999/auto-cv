@@ -7,10 +7,10 @@ import {
   type ReactNode,
 } from 'react';
 import { AppStateContext } from './app-state-context';
-import { DEFAULT_RESUME } from '../constants/defaultResume';
-import { loadAppState, saveAppState } from '../lib/db';
-import i18n from '../i18n';
-import { runAnalysisJob } from '../lib/analyze';
+import { DEFAULT_RESUME } from '@/constants/defaultResume';
+import { loadAppState, saveAppState } from '@/lib/db';
+import i18n from '@/i18n';
+import { runAnalysisJob } from '@/lib/analyze';
 import type {
   AppStateValue,
   AppTab,
@@ -18,7 +18,7 @@ import type {
   ResumeRecord,
   RewriteSuggestion,
   SuggestionStatus,
-} from '../types/app';
+} from '@/types/app';
 
 type AnalysisPhase = 'idle' | 'running' | 'done' | 'error';
 
