@@ -1,9 +1,9 @@
-import { DEFAULT_RESUME } from '../constants/defaultResume';
+import { DEFAULT_RESUME } from '@/constants/defaultResume';
 import type {
   PersistedAppState,
   PersistedSnapshot,
   ResumeRecord,
-} from '../types/app';
+} from '@/types/app';
 
 const DB_NAME = 'job-resume-agent';
 const DB_VERSION = 2;

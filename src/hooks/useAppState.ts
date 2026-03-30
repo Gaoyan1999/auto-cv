@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { AppStateContext } from '../context/app-state-context';
+import { AppStateContext } from '@/context/app-state-context';
 
 export function useAppState() {
   const ctx = useContext(AppStateContext);

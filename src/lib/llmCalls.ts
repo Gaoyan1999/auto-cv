@@ -5,7 +5,7 @@
  * Current production path (`runAnalysisJob` in `analyze.ts`) uses heuristics only.
  */
 
-import type { AnalysisResult, RewriteSuggestion } from '../types/app';
+import type { AnalysisResult, RewriteSuggestion } from '@/types/app';
 
 // ---------------------------------------------------------------------------
 // Shared

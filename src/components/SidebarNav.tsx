@@ -3,9 +3,9 @@ import { Tab, TabGroup, TabList } from '@headlessui/react';
 import { FileText, PanelLeft, PanelRight, ScanSearch } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
-import { useAppNavigate } from '../routes/useAppNavigate';
-import type { AppTab } from '../types/app';
-import { useAppState } from '../hooks/useAppState';
+import { useAppNavigate } from '@/routes/useAppNavigate';
+import type { AppTab } from '@/types/app';
+import { useAppState } from '@/hooks/useAppState';
 
 const SIDEBAR_COLLAPSED_KEY = 'auto-cv-sidebar-collapsed';
 
