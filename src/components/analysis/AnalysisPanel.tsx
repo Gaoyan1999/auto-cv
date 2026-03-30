@@ -1,8 +1,16 @@
-import { AlertCircle, FileText, RefreshCw } from 'lucide-react';
+import {
+  AlertCircle,
+  ChevronLeft,
+  Eye,
+  FileText,
+  RefreshCw,
+} from 'lucide-react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAppNavigate } from '../../routes/useAppNavigate';
 import { assessJobDescription } from '../../lib/jdValidation';
 import { Button } from '../ui/Button';
+import { ConfirmDialog } from '../ui/ConfirmDialog';
 import { useAppState } from '../../hooks/useAppState';
 import {
   AnalysisFlowStepper,
@@ -18,9 +26,11 @@ export function AnalysisPanel() {
     analysisPhase,
     analysisError,
     runAnalysis,
+    backToJdStep,
     jd,
     setJd,
   } = useAppState();
+  const [jdPreviewOpen, setJdPreviewOpen] = useState(false);
 
   const showLoading = analysisPhase === 'running';
   const showError = analysisPhase === 'error';
@@ -49,6 +59,12 @@ export function AnalysisPanel() {
     }
   };
 
+  const showAnalysisToolbar = analysisPhase !== 'idle';
+
+  const handleToolbarBack = () => {
+    backToJdStep();
+  };
+
   const flowHint = showLoading
     ? t('analysis.flow.hintLoading')
     : showResults
@@ -59,7 +75,49 @@ export function AnalysisPanel() {
 
   return (
     <div className="flex min-h-0 flex-1 flex-col p-6 md:p-8">
+      <ConfirmDialog
+        open={jdPreviewOpen}
+        onClose={() => setJdPreviewOpen(false)}
+        title={t('analysis.jdPreviewTitle')}
+        size="lg"
+        cancelLabel={t('analysis.jdPreviewCancel')}
+        confirmLabel={t('analysis.jdPreviewDone')}
+        closeAriaLabel={t('analysis.jdPreviewClose')}
+        content={
+          jd.trim() ? (
+            <p className="whitespace-pre-wrap text-sm leading-relaxed text-[var(--app-muted)]">
+              {jd}
+            </p>
+          ) : (
+            <p className="text-sm text-[var(--app-faint)]">
+              {t('analysis.jdPreviewEmpty')}
+            </p>
+          )
+        }
+      />
+
       <div className="mx-auto flex w-full max-w-3xl flex-col gap-6">
+        {showAnalysisToolbar ? (
+          <div className="flex w-full flex-wrap items-center justify-between gap-3">
+            <Button
+              variant="secondary"
+              disabled={showLoading}
+              onClick={handleToolbarBack}
+            >
+              <ChevronLeft className="h-4 w-4" aria-hidden />
+              {t('analysis.backRegenerate')}
+            </Button>
+            <Button
+              variant="secondary"
+              disabled={showLoading}
+              onClick={() => setJdPreviewOpen(true)}
+            >
+              <Eye className="h-4 w-4" aria-hidden />
+              {t('analysis.previewJd')}
+            </Button>
+          </div>
+        ) : null}
+
         <div className="flex w-full flex-col gap-3">
           <AnalysisFlowStepper mode={flowMode} />
           <p className="text-left text-xs leading-relaxed text-[var(--app-faint)]">
@@ -82,9 +140,11 @@ export function AnalysisPanel() {
             <p className="max-w-md text-sm text-[var(--app-muted)]">
               {analysisError ?? t('analysis.errorBody')}
             </p>
-            <Button variant="secondary" onClick={() => void runAnalysis()}>
-              {t('analysis.retry')}
-            </Button>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <Button variant="secondary" onClick={() => void runAnalysis()}>
+                {t('analysis.retry')}
+              </Button>
+            </div>
           </div>
         ) : null}
 

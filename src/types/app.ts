@@ -65,6 +65,8 @@ export interface AppStateValue {
   analysisPhase: 'idle' | 'running' | 'done' | 'error';
   analysisError: string | null;
   runAnalysis: () => Promise<void>;
+  /** Leave step 2 (analysis) and return to the job posting step. */
+  backToJdStep: () => void;
   acceptSuggestion: (id: string) => void;
   rejectSuggestion: (id: string) => void;
   acceptAllSuggestions: () => void;
