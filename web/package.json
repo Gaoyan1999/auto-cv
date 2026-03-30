@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "@auto-cv/web",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,9 +11,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.9",
     "@tailwindcss/vite": "^4.2.2",
+    "i18next": "^24.2.3",
+    "i18next-browser-languagedetector": "^8.0.4",
+    "lucide-react": "^0.469.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
+    "react-i18next": "^15.4.1",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.13.2",
+    "remark-gfm": "^4.0.1",
     "tailwindcss": "^4.2.2"
   },
   "devDependencies": {
