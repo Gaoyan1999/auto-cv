@@ -3,11 +3,18 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "pnpm --filter @auto-cv/web dev",
-    "build": "pnpm --filter @auto-cv/web build",
+    "dev": "pnpm dev:all",
+    "dev:web": "pnpm --filter @auto-cv/web dev",
+    "dev:app": "pnpm --filter @auto-cv/app dev",
+    "dev:all": "concurrently \"pnpm dev:web\" \"pnpm dev:app\"",
+    "build:web": "pnpm --filter @auto-cv/web build",
+    "build:app": "pnpm --filter @auto-cv/app build",
+    "build": "pnpm build:web && pnpm build:app",
     "format": "pnpm --filter @auto-cv/web format",
     "lint": "pnpm --filter @auto-cv/web lint",
     "preview": "pnpm --filter @auto-cv/web preview"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
 }
