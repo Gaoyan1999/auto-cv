@@ -194,12 +194,17 @@ export function ResumeWorkspace() {
                 >
                   <div className="h-full p-[42px]">
                     <div
-                      className={RESUME_HTML_PREVIEW_CLASS}
-                      style={{
-                        transform: `translateY(-${idx * PAGE_CONTENT_HEIGHT}px)`,
-                      }}
-                      dangerouslySetInnerHTML={{ __html: htmlPreview }}
-                    />
+                      className="overflow-hidden"
+                      style={{ height: `${PAGE_CONTENT_HEIGHT}px` }}
+                    >
+                      <div
+                        className={RESUME_HTML_PREVIEW_CLASS}
+                        style={{
+                          transform: `translateY(-${idx * PAGE_CONTENT_HEIGHT}px)`,
+                        }}
+                        dangerouslySetInnerHTML={{ __html: htmlPreview }}
+                      />
+                    </div>
                   </div>
                 </div>
               ))}
