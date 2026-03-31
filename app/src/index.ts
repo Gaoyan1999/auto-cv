@@ -4,6 +4,7 @@ import express from 'express';
 import { z } from 'zod';
 import { createAgent } from 'langchain';
 import { getQwen35FlashModel } from './model-provider';
+import { renderResumePdf } from './resume-pdf';
 
 const app = express();
 const port = Number(process.env.PORT ?? 8787);
@@ -32,6 +33,9 @@ const inputSchema = z.object({
     }),
   ),
 });
+const resumePdfSchema = z.object({
+  markdown: z.string(),
+});
 
 app.get('/api/chat', async (_req, res) => {
 
@@ -51,6 +55,19 @@ app.get('/api/chat', async (_req, res) => {
   } catch (error) {
     console.error('Chat request failed', error);
     return res.status(500).json({ error: 'LLM request failed' });
+  }
+});
+
+app.post('/api/resume/pdf', async (req, res) => {
+  try {
+    const { markdown } = resumePdfSchema.parse(req.body);
+    const pdf = await renderResumePdf(markdown);
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Cache-Control', 'no-store');
+    return res.status(200).send(Buffer.from(pdf));
+  } catch (error) {
+    console.error('Failed to render resume PDF', error);
+    return res.status(400).json({ error: 'Failed to render PDF' });
   }
 });
 
