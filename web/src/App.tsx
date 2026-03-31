@@ -16,7 +16,7 @@ import './App.css';
 function LoadingScreen() {
   const { t } = useTranslation();
   return (
-    <div className="flex min-h-[100svh] items-center justify-center bg-[var(--app-canvas)] text-sm text-[var(--app-muted)]">
+    <div className="flex h-[100svh] items-center justify-center overflow-hidden bg-[var(--app-canvas)] text-sm text-[var(--app-muted)]">
       {t('app.loading')}
     </div>
   );
@@ -30,7 +30,7 @@ function ListPage() {
   }, [goToList]);
 
   return (
-    <div className="flex min-h-[100svh] flex-col bg-[var(--app-canvas)] text-[var(--app-text)]">
+    <div className="flex h-[100svh] flex-col overflow-hidden bg-[var(--app-canvas)] text-[var(--app-text)]">
       <AppHeader variant="list" />
       <main className="min-h-0 flex-1 overflow-auto bg-[var(--app-canvas)]">
         <ResumeListPage />
@@ -80,7 +80,7 @@ function PolishPage() {
   const exists = resumeId && resumes.some((r) => r.id === resumeId);
   if (!exists) {
     return (
-      <div className="flex min-h-[100svh] items-center justify-center bg-[var(--app-canvas)] text-sm text-[var(--app-muted)]">
+      <div className="flex h-[100svh] items-center justify-center overflow-hidden bg-[var(--app-canvas)] text-sm text-[var(--app-muted)]">
         {t('app.loading')}
       </div>
     );
@@ -90,9 +90,9 @@ function PolishPage() {
     section === 'analysis' ? <AnalysisPanel /> : <ResumeWorkspace />;
 
   return (
-    <div className="flex min-h-[100svh] flex-col bg-[var(--app-canvas)] text-[var(--app-text)]">
+    <div className="flex h-[100svh] flex-col overflow-hidden bg-[var(--app-canvas)] text-[var(--app-text)]">
       <AppHeader variant="workspace" />
-      <div className="flex min-h-0 flex-1 flex-col md:flex-row">
+      <div className="flex min-h-0 flex-1 overflow-hidden flex-col md:flex-row">
         <SidebarNav />
         <main className="min-h-0 flex-1 overflow-auto bg-[var(--app-canvas)]">
           {panel}

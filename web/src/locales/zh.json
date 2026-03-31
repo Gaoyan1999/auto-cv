@@ -46,8 +46,12 @@
     "rejectAll": "全部拒绝",
     "inlineTitle": "待处理建议",
     "suggestionsRegion": "AI 改写建议",
+    "resizePanels": "调整编辑区和预览区宽度",
     "accept": "接受",
-    "reject": "拒绝"
+    "reject": "拒绝",
+    "pdfLoading": "正在生成 PDF 预览…",
+    "pdfError": "PDF 预览渲染失败，请重试。",
+    "pdfEmpty": "开始输入简历 Markdown 后，这里会显示 PDF 预览。"
   },
   "jd": {
     "step": "第 1 步 / 共 3 步 · 职位",

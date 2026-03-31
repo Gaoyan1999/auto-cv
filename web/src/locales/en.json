@@ -46,8 +46,12 @@
     "rejectAll": "Reject all",
     "inlineTitle": "Pending suggestions",
     "suggestionsRegion": "AI rewrite suggestions",
+    "resizePanels": "Resize editor and preview panels",
     "accept": "Accept",
-    "reject": "Reject"
+    "reject": "Reject",
+    "pdfLoading": "Generating PDF preview…",
+    "pdfError": "Could not render PDF preview. Please try again.",
+    "pdfEmpty": "Start typing resume Markdown to see the PDF preview."
   },
   "jd": {
     "step": "Step 1 of 3 · Job posting",
