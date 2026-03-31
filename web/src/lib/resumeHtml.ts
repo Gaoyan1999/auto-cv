@@ -77,12 +77,44 @@ export function resumeHtmlStyles(): string {
   `.trim();
 }
 
+/** Full HTML document for PDF export — same markdown + CSS as the in-app preview. */
+export function buildResumePdfHtml(markdownSource: string): string {
+  const body = renderResumeHtmlFragment(markdownSource);
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @page { size: A4; margin: 0; }
+      :root { color-scheme: light; }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: #ffffff; }
+      .page {
+        width: 794px;
+        min-height: 1123px;
+        padding: 42px;
+      }
+      ${resumeHtmlStyles()}
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <div class="${RESUME_HTML_PREVIEW_CLASS}">
+        ${body}
+      </div>
+    </main>
+  </body>
+</html>`;
+}
+
 export async function downloadResumePdf(filename: string, source: string) {
   const apiBase = import.meta.env.VITE_APP_API_BASE ?? 'http://localhost:8787';
+  const html = buildResumePdfHtml(source);
   const response = await fetch(`${apiBase}/api/resume/pdf`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ markdown: source }),
+    body: JSON.stringify({ html }),
   });
   if (!response.ok) {
     throw new Error(`PDF export failed with status ${response.status}`);

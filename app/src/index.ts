@@ -19,7 +19,7 @@ if (!apiKey) {
 }
 
 app.use(cors());
-app.use(express.json({ limit: '1mb' }));
+app.use(express.json({ limit: '12mb' }));
 
 app.get('/api/health', (_req, res) => {
   res.json({ ok: true });
@@ -34,7 +34,7 @@ const inputSchema = z.object({
   ),
 });
 const resumePdfSchema = z.object({
-  markdown: z.string(),
+  html: z.string().min(1),
 });
 
 app.get('/api/chat', async (_req, res) => {
@@ -60,8 +60,8 @@ app.get('/api/chat', async (_req, res) => {
 
 app.post('/api/resume/pdf', async (req, res) => {
   try {
-    const { markdown } = resumePdfSchema.parse(req.body);
-    const pdf = await renderResumePdf(markdown);
+    const { html } = resumePdfSchema.parse(req.body);
+    const pdf = await renderResumePdf(html);
     res.setHeader('Content-Type', 'application/pdf');
     res.setHeader('Cache-Control', 'no-store');
     return res.status(200).send(Buffer.from(pdf));
