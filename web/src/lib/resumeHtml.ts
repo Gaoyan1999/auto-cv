@@ -12,7 +12,34 @@ export function renderResumeHtmlFragment(source: string): string {
   if (!source.trim()) {
     return '<p class="resume-html-empty">Start typing resume Markdown…</p>';
   }
-  return markdown.render(source);
+  const html = markdown.render(source);
+  return parseSpaceBlocks(parseStrongTag(html));
+}
+
+function parseSpaceBlocks(html: string): string {
+  const blockRegex = /<p>\s*:::\s*start([\s\S]*?):::\s*end\s*<\/p>/gi;
+  return html.replace(blockRegex, (_full, inner: string) => {
+    const normalized = inner.replace(/<br\s*\/?>/gi, '\n');
+    const parts = normalized
+      .split(/\n?\s*:::+\s*\n?/g)
+      .map((part) => part.trim())
+      .filter(Boolean);
+
+    if (!parts.length) {
+      return '';
+    }
+
+    const cells = parts
+      .map((part) => `<span class="resume-space-between-cell">${part}</span>`)
+      .join('');
+
+    return `<p class="resume-space-between">${cells}</p>`;
+  });
+}
+function parseStrongTag(html: string): string {
+  return html.replace(/\*\*([\s\S]+?)\*\*/g, (_full, inner: string) => {
+    return `<strong>${inner}</strong>`;
+  });
 }
 
 export function resumeHtmlStyles(): string {
@@ -41,6 +68,15 @@ export function resumeHtmlStyles(): string {
 .${RESUME_HTML_PREVIEW_CLASS} ol { margin: 0.35em 0; }
 .${RESUME_HTML_PREVIEW_CLASS} ul,
 .${RESUME_HTML_PREVIEW_CLASS} ol { padding-left: 1.2em; }
+.${RESUME_HTML_PREVIEW_CLASS} ul {
+  list-style: disc outside;
+}
+.${RESUME_HTML_PREVIEW_CLASS} ol {
+  list-style: decimal outside;
+}
+.${RESUME_HTML_PREVIEW_CLASS} li {
+  display: list-item;
+}
 .${RESUME_HTML_PREVIEW_CLASS} li + li { margin-top: 0.2em; }
 .${RESUME_HTML_PREVIEW_CLASS} table {
   width: 100%;
@@ -73,6 +109,15 @@ export function resumeHtmlStyles(): string {
 }
 .${RESUME_HTML_PREVIEW_CLASS} .resume-html-empty {
   color: #6b7280;
+}
+.${RESUME_HTML_PREVIEW_CLASS} .resume-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+.${RESUME_HTML_PREVIEW_CLASS} .resume-space-between-cell {
+  white-space: nowrap;
 }
   `.trim();
 }
